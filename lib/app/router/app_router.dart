@@ -1,6 +1,4 @@
-
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 import 'package:irecipe/app/views/view_onboarding/onboarding_view.dart';
 import 'package:irecipe/app/views/view_splash/splash_view.dart';
 

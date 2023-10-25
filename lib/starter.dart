@@ -17,5 +17,6 @@ launchApp() async {
       debugPrint('Development mode');
     }
   }
+  
   runApp(const App());
 }

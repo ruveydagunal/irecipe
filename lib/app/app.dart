@@ -1,3 +1,4 @@
+
 import 'package:flavor/flavor.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  Locale _locale = const Locale('tr', 'TR');
+  Locale _locale = const Locale('en', 'US');
   ThemeData _themeData = AppThemeLight.getTheme();
 
   changeTheme(ThemeData themeData) {
@@ -63,8 +64,7 @@ class _AppState extends State<App> {
         debugShowCheckedModeBanner: false,
         theme: _themeData,
         locale: _locale,
-        routerConfig:
-            _appRouter.config(navigatorObservers: () => [NavigatorObserver()]),
+        routerConfig: _appRouter.config(),
       ),
     );
   }
