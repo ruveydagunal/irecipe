@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029257662786",
+    "project_id": "dream-1012",
+    "storage_bucket": "dream-1012.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029257662786:android:4fe77e904434dad81fb8db",
+        "android_client_info": {
+          "package_name": "com.dream.android.apps.dream"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCikQVgLZjGRcpJ96AtGVK_KbisOX6o8Nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
