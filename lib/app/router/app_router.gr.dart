@@ -21,6 +21,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingView(),
       );
     },
+    SignInViewRoute.name: (routeData) {
+      final args = routeData.argsAs<SignInViewRouteArgs>(
+          orElse: () => const SignInViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignInView(key: args.key),
+      );
+    },
+    SignUpViewRoute.name: (routeData) {
+      final args = routeData.argsAs<SignUpViewRouteArgs>(
+          orElse: () => const SignUpViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SignUpView(key: args.key),
+      );
+    },
     SplashViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -42,6 +58,64 @@ class OnboardingViewRoute extends PageRouteInfo<void> {
   static const String name = 'OnboardingViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignInView]
+class SignInViewRoute extends PageRouteInfo<SignInViewRouteArgs> {
+  SignInViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SignInViewRoute.name,
+          args: SignInViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'SignInViewRoute';
+
+  static const PageInfo<SignInViewRouteArgs> page =
+      PageInfo<SignInViewRouteArgs>(name);
+}
+
+class SignInViewRouteArgs {
+  const SignInViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SignInViewRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [SignUpView]
+class SignUpViewRoute extends PageRouteInfo<SignUpViewRouteArgs> {
+  SignUpViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SignUpViewRoute.name,
+          args: SignUpViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'SignUpViewRoute';
+
+  static const PageInfo<SignUpViewRouteArgs> page =
+      PageInfo<SignUpViewRouteArgs>(name);
+}
+
+class SignUpViewRouteArgs {
+  const SignUpViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SignUpViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
