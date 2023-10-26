@@ -1,6 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
+
 
 class OnboardingSecondView extends StatelessWidget {
   const OnboardingSecondView({super.key});
@@ -12,10 +13,7 @@ class OnboardingSecondView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          // Lottie.asset('asset/lottie/lottie_onboarding_second.json'),
-          Text('Paylaştıklarınla insanlara ilham kaynağı ol',
-              style:  TextStyle(color: Colors.brown, fontSize: 30)),
-          // SizedBox(width: double.infinity, child: CustomButton(buttonText: 'Sonraki', onPressed: ()=>context.router.replaceAll([SignUpViewRoute()])))
+          Lottie.asset('assets/lotties/animation_two.json'),
         ],
       ),
     ));

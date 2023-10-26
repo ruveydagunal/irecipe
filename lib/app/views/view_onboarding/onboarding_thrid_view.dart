@@ -3,8 +3,8 @@ import 'package:lottie/lottie.dart';
 
 
 
-class OnboardingFirstView extends StatelessWidget {
-  const OnboardingFirstView({super.key});
+class OnboardingThridView extends StatelessWidget {
+  const OnboardingThridView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +13,7 @@ class OnboardingFirstView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Lottie.asset('assets/lotties/animation.json'),
+          Lottie.asset('assets/lotties/animation_three.json'),
         ],
       ),
     ));
