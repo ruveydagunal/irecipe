@@ -1,10 +1,10 @@
 import 'dart:async';
-
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:irecipe/app/views/view_home/home_view.dart';
+import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_signin/view_model/signin_event.dart';
 import 'package:irecipe/app/views/view_signin/view_model/signin_state.dart';
 import 'package:irecipe/core/repository/model/auth/signin/signin_request_model.dart';
@@ -33,10 +33,9 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
           content: SnackBarWidget.success(
             subTitle: 'Giriş başarılı, ana sayfaya yönlendiriliyorsunuz...',
           )));
-      Future.delayed(const Duration(seconds: 2), () {
-        Navigator.of(event.context)
-            .push(MaterialPageRoute(builder: (context) =>  HomeView()));
-      });
+       Future.delayed(const Duration(seconds: 2), () {
+     event.context.router.push(HomeViewRoute());
+    });
     } catch (e, stack) {
       FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
       FirebaseAuthException exception = e as FirebaseAuthException;
