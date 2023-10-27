@@ -15,6 +15,14 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    HomeViewRoute.name: (routeData) {
+      final args = routeData.argsAs<HomeViewRouteArgs>(
+          orElse: () => const HomeViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: HomeView(key: args.key),
+      );
+    },
     OnboardingViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -44,6 +52,35 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [HomeView]
+class HomeViewRoute extends PageRouteInfo<HomeViewRouteArgs> {
+  HomeViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          HomeViewRoute.name,
+          args: HomeViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeViewRoute';
+
+  static const PageInfo<HomeViewRouteArgs> page =
+      PageInfo<HomeViewRouteArgs>(name);
+}
+
+class HomeViewRouteArgs {
+  const HomeViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'HomeViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
