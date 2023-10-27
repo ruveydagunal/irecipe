@@ -35,7 +35,7 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
           )));
       Future.delayed(const Duration(seconds: 2), () {
         Navigator.of(event.context)
-            .push(MaterialPageRoute(builder: (context) => const HomeView()));
+            .push(MaterialPageRoute(builder: (context) =>  HomeView()));
       });
     } catch (e, stack) {
       FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
