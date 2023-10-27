@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:707107198257:android:8ebe522507398b3fa70c10",
+        "mobilesdk_app_id": "1:707107198257:android:d3a0b4fe43bdfc0ba70c10",
         "android_client_info": {
-          "package_name": "com.dream.android.apps.dream"
+          "package_name": "com.edu4tech.irecipe"
         }
       },
       "oauth_client": [],

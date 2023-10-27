@@ -1,4 +1,4 @@
-package com.dream.android.apps.dream
+package com.edu4tech.irecipe
 
 import io.flutter.embedding.android.FlutterActivity
 

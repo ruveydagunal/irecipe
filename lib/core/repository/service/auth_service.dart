@@ -24,7 +24,6 @@ class AuthService {
           "name": signUpRequestModel.name,
           "surname": signUpRequestModel.surname,
           "email": signUpRequestModel.email,
-          "address": signUpRequestModel.address
         }));
 
     return signUpRequestModel;
