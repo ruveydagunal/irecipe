@@ -23,7 +23,6 @@ mixin _$SignUpRequestModel {
   String get name => throw _privateConstructorUsedError;
   String get surname => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
@@ -43,7 +42,6 @@ abstract class $SignUpRequestModelCopyWith<$Res> {
       {String name,
       String surname,
       String address,
-      String phoneNumber,
       String email,
       String password});
 }
@@ -64,7 +62,6 @@ class _$SignUpRequestModelCopyWithImpl<$Res, $Val extends SignUpRequestModel>
     Object? name = null,
     Object? surname = null,
     Object? address = null,
-    Object? phoneNumber = null,
     Object? email = null,
     Object? password = null,
   }) {
@@ -80,10 +77,6 @@ class _$SignUpRequestModelCopyWithImpl<$Res, $Val extends SignUpRequestModel>
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -109,7 +102,6 @@ abstract class _$$SignUpRequestModelImplCopyWith<$Res>
       {String name,
       String surname,
       String address,
-      String phoneNumber,
       String email,
       String password});
 }
@@ -128,7 +120,6 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
     Object? name = null,
     Object? surname = null,
     Object? address = null,
-    Object? phoneNumber = null,
     Object? email = null,
     Object? password = null,
   }) {
@@ -144,10 +135,6 @@ class __$$SignUpRequestModelImplCopyWithImpl<$Res>
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -168,7 +155,6 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
       {required this.name,
       required this.surname,
       required this.address,
-      required this.phoneNumber,
       required this.email,
       required this.password});
 
@@ -182,15 +168,13 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
   @override
   final String address;
   @override
-  final String phoneNumber;
-  @override
   final String email;
   @override
   final String password;
 
   @override
   String toString() {
-    return 'SignUpRequestModel(name: $name, surname: $surname, address: $address, phoneNumber: $phoneNumber, email: $email, password: $password)';
+    return 'SignUpRequestModel(name: $name, surname: $surname, address: $address, email: $email, password: $password)';
   }
 
   @override
@@ -201,8 +185,6 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -210,8 +192,8 @@ class _$SignUpRequestModelImpl implements _SignUpRequestModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, surname, address, phoneNumber, email, password);
+  int get hashCode =>
+      Object.hash(runtimeType, name, surname, address, email, password);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +215,6 @@ abstract class _SignUpRequestModel implements SignUpRequestModel {
       {required final String name,
       required final String surname,
       required final String address,
-      required final String phoneNumber,
       required final String email,
       required final String password}) = _$SignUpRequestModelImpl;
 
@@ -246,8 +227,6 @@ abstract class _SignUpRequestModel implements SignUpRequestModel {
   String get surname;
   @override
   String get address;
-  @override
-  String get phoneNumber;
   @override
   String get email;
   @override

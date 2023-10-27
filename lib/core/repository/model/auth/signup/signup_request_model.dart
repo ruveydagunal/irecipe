@@ -18,7 +18,6 @@ class SignUpRequestModel with _$SignUpRequestModel {
         required String name,
         required String surname,
         required String address,
-        required String phoneNumber,
         required String email,
         required String password,
     }) = _SignUpRequestModel;

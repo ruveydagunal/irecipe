@@ -12,7 +12,6 @@ _$SignUpRequestModelImpl _$$SignUpRequestModelImplFromJson(
       name: json['name'] as String,
       surname: json['surname'] as String,
       address: json['address'] as String,
-      phoneNumber: json['phoneNumber'] as String,
       email: json['email'] as String,
       password: json['password'] as String,
     );
@@ -23,7 +22,6 @@ Map<String, dynamic> _$$SignUpRequestModelImplToJson(
       'name': instance.name,
       'surname': instance.surname,
       'address': instance.address,
-      'phoneNumber': instance.phoneNumber,
       'email': instance.email,
       'password': instance.password,
     };
