@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1029257662786",
-    "project_id": "dream-1012",
-    "storage_bucket": "dream-1012.appspot.com"
+    "project_number": "707107198257",
+    "project_id": "irecipe-1610",
+    "storage_bucket": "irecipe-1610.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1029257662786:android:4fe77e904434dad81fb8db",
+        "mobilesdk_app_id": "1:707107198257:android:8ebe522507398b3fa70c10",
         "android_client_info": {
           "package_name": "com.dream.android.apps.dream"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCikQVgLZjGRcpJ96AtGVK_KbisOX6o8Nk"
+          "current_key": "AIzaSyDKxZeo1tq0REkz1eL7NRZbD1a9AYXPuNo"
         }
       ],
       "services": {
