@@ -1,7 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:irecipe/app/router/app_router.dart';
+import 'package:irecipe/app/views/view_signin/view_model/signin_event.dart';
+import 'package:irecipe/app/views/view_signin/view_model/signin_state.dart';
+import 'package:irecipe/app/views/view_signin/view_model/signin_view_model.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/widgets/custom_button.dart';
 import 'package:irecipe/core/widgets/custom_input.dart';
@@ -9,12 +13,12 @@ import 'package:irecipe/core/widgets/custom_input.dart';
 @RoutePage()
 class SignInView extends StatelessWidget {
   SignInView({super.key});
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BlocProvider(create: (context) => SignInViewModel(),
+    child: BlocBuilder<SignInViewModel, SignInState>(builder: (context,state){
+      return Scaffold(
         body: SafeArea(
       child: Padding(
         padding: context.paddingNormal,
@@ -45,7 +49,7 @@ class SignInView extends StatelessWidget {
                     CustomTextInput(
                       label: 'Email',
                       icon: Icon(Icons.email_outlined),
-                      controller: emailController,
+                      controller: context.read<SignInViewModel>().emailController,
                        keyboardType: TextInputType.emailAddress,
                        validator: (value) {
                           if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value!)) { 
@@ -59,9 +63,9 @@ class SignInView extends StatelessWidget {
                       label: 'Şifre',
                       icon: Icon(Icons.key_outlined),
                       textInputAction: TextInputAction.done,
-                      controller: passwordController,
+                      controller: context.read<SignInViewModel>().passwordController,
                        validator: (value) {
-                            if (passwordController.text.isEmpty) {
+                            if (context.read<SignInViewModel>().passwordController.text.isEmpty) {
                               return "Lütfen İsim Soyisim Giriniz";
                             }
                             return null;
@@ -72,7 +76,11 @@ class SignInView extends StatelessWidget {
                       height: 20,
                     ),
                     CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context
+                            .read<SignInViewModel>()
+                            .add(SignInInitialEvent(context));
+                      },
                       buttonText: 'Giriş Yap',
                     ),
                     
@@ -84,5 +92,7 @@ class SignInView extends StatelessWidget {
         ),
       ),
     ));
+    }),
+    );
   }
 }
