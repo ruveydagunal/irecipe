@@ -17,7 +17,6 @@ class SignUpRequestModel with _$SignUpRequestModel {
     const factory SignUpRequestModel({
         required String name,
         required String surname,
-        required String address,
         required String email,
         required String password,
     }) = _SignUpRequestModel;

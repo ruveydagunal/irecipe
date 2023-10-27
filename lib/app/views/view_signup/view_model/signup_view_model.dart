@@ -15,10 +15,9 @@ class SignUpViewModel extends Bloc<SignUpEvent, SignUpState> {
   }
 
   TextEditingController nameController = TextEditingController();
-  TextEditingController surNameController = TextEditingController();
+  TextEditingController surnameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController adressController = TextEditingController();
 
   AuthService authService = AuthService();
 
@@ -27,8 +26,7 @@ class SignUpViewModel extends Bloc<SignUpEvent, SignUpState> {
     try {
       await authService.signUp(SignUpRequestModel(
           name: nameController.text,
-          surname: surNameController.text.trim(),
-          address: adressController.text,
+          surname: surnameController.text.trim(),
           email: emailController.text.trim(),
           password: passwordController.text.trim()));
 
