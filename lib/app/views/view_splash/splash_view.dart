@@ -18,7 +18,7 @@ class SplashView extends StatelessWidget {
           BlocBuilder<SplashViewModel, SplashState>(builder: (context, state) {
         return Scaffold(
             body: Container(
-                color: Colors.white,
+                color: Theme.of(context).scaffoldBackgroundColor,
                 child: Center(
                     child: SvgPicture.asset(
                   'assets/images/svg/iRecipe.svg',
