@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
+import 'package:irecipe/app/theme/light_theme.dart';
 import 'package:irecipe/app/views/view_signup/view_model/signup_event.dart';
 import 'package:irecipe/app/views/view_signup/view_model/signup_state.dart';
 import 'package:irecipe/app/views/view_signup/view_model/signup_view_model.dart';
@@ -29,7 +30,7 @@ class SignUpView extends StatelessWidget {
             children: [
               Text(L10n.of(context)!.signUp,
                   style: TextStyle(
-                      color: Colors.orange[800],
+                      color: Theme.of(context).primaryColor,
                       fontSize: 40,
                       fontWeight: FontWeight.w500)),
               Row(

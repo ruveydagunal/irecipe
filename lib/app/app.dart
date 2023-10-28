@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
+import 'package:irecipe/app/theme/dark_theme.dart';
 import 'package:irecipe/app/theme/light_theme.dart';
 
 class App extends StatefulWidget {
@@ -27,7 +28,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   Locale _locale = const Locale('en', 'US');
-  ThemeData _themeData = AppThemeLight.getTheme();
+  ThemeData _themeData = AppThemeLight().themeData;
 
   changeTheme(ThemeData themeData) {
     setState(() {
