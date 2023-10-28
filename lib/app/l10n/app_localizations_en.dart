@@ -57,4 +57,37 @@ class L10nEn extends L10n {
 
   @override
   String get exitMessage => 'Checking Out';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get successLoginMessage => 'The Login Is Successful, You Are Redirected To The Homepage';
+
+  @override
+  String get inCorrectEmailFormatMessage => 'The Email Format Is Incorrect';
+
+  @override
+  String get inCorrectEmailPasswordMessage => 'The Email or Password is Incorrect';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get privacy => 'Privacy';
 }

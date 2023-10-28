@@ -26,7 +26,7 @@ class L10nTr extends L10n {
   String get dontHaveAccount => 'Hesabınız Yok mu?';
 
   @override
-  String get signUp => 'Sign Up';
+  String get signUp => 'Kayıt Ol';
 
   @override
   String get email => 'Eposta';
@@ -57,4 +57,37 @@ class L10nTr extends L10n {
 
   @override
   String get exitMessage => 'Çıkış yapılıyor';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get resetPassword => 'Şifre Sıfırlama';
+
+  @override
+  String get notifications => 'Bildirimler';
+
+  @override
+  String get theme => 'Tema';
+
+  @override
+  String get settings => 'Ayarlar';
+
+  @override
+  String get language => 'Dil';
+
+  @override
+  String get successLoginMessage => 'Giriş Başarılı, Anasayfaya Yönlendiriliyorsunuz';
+
+  @override
+  String get inCorrectEmailFormatMessage => 'Eposta Formatı Hatalı';
+
+  @override
+  String get inCorrectEmailPasswordMessage => 'Eposta ya da Şifre Hatalı';
+
+  @override
+  String get about => 'Hakkında';
+
+  @override
+  String get privacy => 'Gizlilik';
 }

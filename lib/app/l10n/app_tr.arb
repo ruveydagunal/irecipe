@@ -7,7 +7,7 @@
     "clickBegin" : "Yemek Yapmaya Başlamak İçin Şimdi Tıklayın",
     "signIn" : "Giriş Yapın",
     "dontHaveAccount" : "Hesabınız Yok mu?",
-    "signUP" : "Kayıt Ol",
+    "signUp" : "Kayıt Ol",
     "email" : "Eposta",
     "validEmailMessage" : "Lütfen Geçerli Bir Mail Adresi Giriniz",
     "validPasswordMesaage" : "Lütfen Şifre Giriniz",
@@ -17,5 +17,18 @@
     "name" : "İsim",
     "surname" : "Soyisim",
     "surnameMessage" : "Lütfen Soyisim Giriniz",
-    "exitMessage" : "Çıkış yapılıyor"
+    "exitMessage" : "Çıkış yapılıyor",
+    "profile" : "Profil",
+    "resetPassword" : "Şifre Sıfırlama",
+    "notifications" : "Bildirimler",
+    "theme" : "Tema",
+    "settings" : "Ayarlar",
+    "language" : "Dil",
+    "successLoginMessage" : "Giriş Başarılı, Anasayfaya Yönlendiriliyorsunuz",
+    "inCorrectEmailFormatMessage" : "Eposta Formatı Hatalı",
+    "inCorrectEmailPasswordMessage" : "Eposta ya da Şifre Hatalı",
+    "about": "Hakkında",
+    "privacy" :"Gizlilik"
+    
+    
 }

@@ -200,6 +200,72 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Checking Out'**
   String get exitMessage;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @successLoginMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The Login Is Successful, You Are Redirected To The Homepage'**
+  String get successLoginMessage;
+
+  /// No description provided for @inCorrectEmailFormatMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The Email Format Is Incorrect'**
+  String get inCorrectEmailFormatMessage;
+
+  /// No description provided for @inCorrectEmailPasswordMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'The Email or Password is Incorrect'**
+  String get inCorrectEmailPasswordMessage;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @privacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacy;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

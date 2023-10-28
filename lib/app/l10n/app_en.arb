@@ -17,7 +17,18 @@
     "name" : "Name",
     "surname" : "Surname",
     "surnameMessage" : "Please Enter Your Surname",
-    "exitMessage" : "Checking Out"
+    "exitMessage" : "Checking Out",
+    "profile" : "Profile",
+    "resetPassword" : "Reset Password",
+    "notifications" : "Notifications",
+    "theme" : "Theme",
+    "settings" : "Settings",
+    "language" : "Language", 
+    "successLoginMessage" : "The Login Is Successful, You Are Redirected To The Homepage",
+    "inCorrectEmailFormatMessage" : "The Email Format Is Incorrect",
+    "inCorrectEmailPasswordMessage" : "The Email or Password is Incorrect",
+    "about": "About",
+    "privacy" : "Privacy"
 
     
 }
