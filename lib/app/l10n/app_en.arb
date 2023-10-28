@@ -10,7 +10,7 @@
     "signUp" : "Sign Up",
     "email" : "Email",
     "validEmailMessage" : "Please Enter a Valid E-Mail Address",
-    "validPasswordMesaage" : "Please Enter The Password",
+    "validPasswordMessage" : "Please Enter The Password",
     "password" : "Password",
     "doHaveAccount" : "Do You Have an Account?",
     "nameMessage" : "Please Enter Your Name",

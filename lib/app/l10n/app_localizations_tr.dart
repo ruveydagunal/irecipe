@@ -35,7 +35,7 @@ class L10nTr extends L10n {
   String get validEmailMessage => 'Lütfen Geçerli Bir Mail Adresi Giriniz';
 
   @override
-  String get validPasswordMesaage => 'Lütfen Şifre Giriniz';
+  String get validPasswordMessage => 'Lütfen Şifre Giriniz';
 
   @override
   String get password => 'Şifre';

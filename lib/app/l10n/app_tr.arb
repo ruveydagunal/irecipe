@@ -10,7 +10,7 @@
     "signUp" : "Kayıt Ol",
     "email" : "Eposta",
     "validEmailMessage" : "Lütfen Geçerli Bir Mail Adresi Giriniz",
-    "validPasswordMesaage" : "Lütfen Şifre Giriniz",
+    "validPasswordMessage" : "Lütfen Şifre Giriniz",
     "password" : "Şifre", 
     "doHaveAccount" : "Hesabınız Var mı?",
     "nameMessage" : "Lütfen İsim Giriniz",

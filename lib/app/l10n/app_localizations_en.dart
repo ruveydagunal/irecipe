@@ -35,7 +35,7 @@ class L10nEn extends L10n {
   String get validEmailMessage => 'Please Enter a Valid E-Mail Address';
 
   @override
-  String get validPasswordMesaage => 'Please Enter The Password';
+  String get validPasswordMessage => 'Please Enter The Password';
 
   @override
   String get password => 'Password';

@@ -153,11 +153,11 @@ abstract class L10n {
   /// **'Please Enter a Valid E-Mail Address'**
   String get validEmailMessage;
 
-  /// No description provided for @validPasswordMesaage.
+  /// No description provided for @validPasswordMessage.
   ///
   /// In en, this message translates to:
   /// **'Please Enter The Password'**
-  String get validPasswordMesaage;
+  String get validPasswordMessage;
 
   /// No description provided for @password.
   ///
