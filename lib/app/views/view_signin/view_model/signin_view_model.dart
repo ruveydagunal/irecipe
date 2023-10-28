@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_signin/view_model/signin_event.dart';
 import 'package:irecipe/app/views/view_signin/view_model/signin_state.dart';
@@ -24,11 +25,12 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
 
   Future<FutureOr<void>> _initial(
       SignInInitialEvent event, Emitter<SignInState> emit) async {
+        FocusManager.instance.primaryFocus?.unfocus();
     try {
       await authService.signIn(SignInRequestModel(
           email: emailController.text.trim(),
           password: passwordController.text.trim()));
-          SuperToast.showInfo(event.context, message: 'Giriş başarılı, ana sayfaya yönlendiriliyorsunuz...');
+          SuperToast.showInfo(event.context, message: L10n.of(event.context)!.successLoginMessage);
        Future.delayed(const Duration(seconds: 2), () {
      event.context.router.push(HomeViewRoute());
     });
@@ -37,10 +39,10 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
       FirebaseAuthException exception = e as FirebaseAuthException;
       exception.code == 'invalid-email'
           ? Future.delayed(const Duration(seconds: 2), () {
-              SuperToast.showFail(event.context, message: 'Email Formatı Hatalı');
+              SuperToast.showFail(event.context, message: L10n.of(event.context)!.inCorrectEmailFormatMessage);
             })
           : Future.delayed(const Duration(seconds: 2), () {
-            SuperToast.showFail(event.context, message: 'Email veya Şifre Hatalı');
+            SuperToast.showFail(event.context, message: L10n.of(event.context)!.inCorrectEmailPasswordMessage);
             });
     }
   }
