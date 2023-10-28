@@ -24,13 +24,10 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () async {
-                await authService.signOut();
-                SuperToast.showInfo(context, message: 'Çıkış Yapılıyor' );
-
-                context.router.replace(SplashViewRoute());
+              onPressed: ()  {
+                context.router.push(SettingsViewRoute());
               },
-              icon: const Icon(Icons.logout))
+              icon: const Icon(Icons.settings_outlined))
         ],
         title: const Text('HomeView'),
       ),
