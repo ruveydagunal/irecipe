@@ -7,6 +7,7 @@ import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_splash/splash_view.dart';
 import 'package:irecipe/core/repository/service/auth_service.dart';
 import 'package:irecipe/core/widgets/snackbar_widget.dart';
+import 'package:super_toast/super_toast.dart';
 
 import 'package:uuid/uuid.dart';
 
@@ -25,12 +26,7 @@ class HomeView extends StatelessWidget {
           IconButton(
               onPressed: () async {
                 await authService.signOut();
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    elevation: 0,
-                    backgroundColor: Colors.transparent,
-                    content: SnackBarWidget.info(
-                      subTitle: 'Çıkış yapılıyor...',
-                    )));
+                SuperToast.showInfo(context, message: 'Çıkış Yapılıyor' );
 
                 context.router.replace(SplashViewRoute());
               },
