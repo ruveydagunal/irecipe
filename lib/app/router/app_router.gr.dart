@@ -29,6 +29,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingView(),
       );
     },
+    SettingsViewRoute.name: (routeData) {
+      final args = routeData.argsAs<SettingsViewRouteArgs>(
+          orElse: () => const SettingsViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SettingsView(key: args.key),
+      );
+    },
     SignInViewRoute.name: (routeData) {
       final args = routeData.argsAs<SignInViewRouteArgs>(
           orElse: () => const SignInViewRouteArgs());
@@ -95,6 +103,35 @@ class OnboardingViewRoute extends PageRouteInfo<void> {
   static const String name = 'OnboardingViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SettingsView]
+class SettingsViewRoute extends PageRouteInfo<SettingsViewRouteArgs> {
+  SettingsViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SettingsViewRoute.name,
+          args: SettingsViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'SettingsViewRoute';
+
+  static const PageInfo<SettingsViewRouteArgs> page =
+      PageInfo<SettingsViewRouteArgs>(name);
+}
+
+class SettingsViewRouteArgs {
+  const SettingsViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'SettingsViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
