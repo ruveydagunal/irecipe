@@ -5,7 +5,7 @@ import 'package:irecipe/core/extensions/context_extension.dart';
 
 class CustomTextInput extends StatelessWidget {
 
-  final label;
+  final String label;
   // final String hintText;
   final Icon icon;
   final TextEditingController controller;
@@ -23,39 +23,37 @@ class CustomTextInput extends StatelessWidget {
       this.keyboardType,
       this.textInputAction,
       this.inputFormatters,
-      this.validator
+      this.validator,
       });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10),
-          SizedBox(
-            child: TextFormField(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              controller: controller,
-              keyboardType: keyboardType ?? TextInputType.text,
-              inputFormatters: inputFormatters,
-              textInputAction: textInputAction ?? TextInputAction.next,
-              validator: validator,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                errorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
-                disabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
-                prefixIcon: icon,
-                label: Text(label),
-                // hintText: hintText,
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: context.verticalPaddingConstLow,
+          child: TextFormField(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            controller: controller,
+            keyboardType: keyboardType ?? TextInputType.text,
+            inputFormatters: inputFormatters,
+            textInputAction: textInputAction ?? TextInputAction.next,
+            validator: validator,
+            
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
+              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
+              errorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
+              disabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
+              focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
+              prefixIcon: icon,
+              label: Text(label)
+              // hintText: hintText,
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }

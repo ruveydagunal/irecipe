@@ -27,6 +27,9 @@ dependencies:
   cloud_firestore: ^4.9.2
   firebase_auth: ^4.10.0
   uuid: ^4.1.0
+  super_toast:
+    git:
+      url: https://github.com/ruveydagunal/super_toast
 
 
 dev_dependencies:

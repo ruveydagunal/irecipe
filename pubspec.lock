@@ -738,6 +738,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  super_toast:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "6ed2f22b900472a9a5cc2ce26b8bcac2947f5d92"
+      url: "https://github.com/ruveydagunal/super_toast"
+    source: git
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
