@@ -17,7 +17,7 @@ final class AppThemeLight {
       centerTitle: true,
       backgroundColor: ColorConstants.bgLight,
       elevation: 0,
-      titleTextStyle: TextStyle(color: ColorConstants.textLight, fontSize: 30),
+      titleTextStyle: TextStyle(color: ColorConstants.textLight, fontSize: 24, fontWeight: FontWeight.w600),
       iconTheme: IconThemeData(color: ColorConstants.textLight)
     );
   }

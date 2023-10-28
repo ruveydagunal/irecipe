@@ -17,7 +17,7 @@ final class AppThemeDark {
       centerTitle: true,
       backgroundColor: ColorConstants.bgDark,
       elevation: 0,
-      titleTextStyle: TextStyle(color: ColorConstants.textDark, fontSize: 30),
+      titleTextStyle: TextStyle(color: ColorConstants.textDark, fontSize: 24, fontWeight: FontWeight.w600),
       iconTheme: IconThemeData(color: ColorConstants.textDark)
     );
   }
