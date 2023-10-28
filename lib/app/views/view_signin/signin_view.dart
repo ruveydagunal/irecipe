@@ -10,6 +10,7 @@ import 'package:irecipe/app/views/view_signin/view_model/signin_view_model.dart'
 import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/widgets/custom_button.dart';
 import 'package:irecipe/core/widgets/custom_input.dart';
+import 'package:irecipe/core/widgets/password_input.dart';
 
 @RoutePage()
 class SignInView extends StatelessWidget {
@@ -60,18 +61,17 @@ class SignInView extends StatelessWidget {
                           return null;
                         },
                     ),
-                    CustomTextInput(
-                      label: L10n.of(context)!.password,
-                      icon: Icon(Icons.key_outlined),
-                      textInputAction: TextInputAction.done,
+                     CustomPasswordTextField(
                       controller: context.read<SignInViewModel>().passwordController,
-                       validator: (value) {
-                            if (context.read<SignInViewModel>().passwordController.text.isEmpty) {
-                              return L10n.of(context)!.validPasswordMesaage;
-                            }
-                            return null;
-                          }
-                      
+                      // inputFormatters: [
+                      //   FilteringTextInputFormatter.deny(RegExp(r'[0-9]'))
+                      // ],
+                      validator: (value) {
+                        if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value!)) {
+                          return L10n.of(context)!.validEmailMessage;
+                        }
+                        return null;
+                      },
                     ),
                     SizedBox(
                       height: 20,
