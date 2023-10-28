@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
+import 'package:irecipe/gen/assets.gen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 
@@ -16,7 +17,7 @@ class OnboardingFirstView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Lottie.asset('assets/lotties/animation.json'),
+              Lottie.asset(Assets.lotties.animationCut),
               Padding(
                 padding: context.paddingMedium,
                 child: Text(L10n.of(context)!.takeStepWorldMeals, style: TextStyle(fontSize: 30),),

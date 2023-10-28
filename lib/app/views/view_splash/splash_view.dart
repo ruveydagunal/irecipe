@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:irecipe/app/views/view_splash/view_model/splash_event.dart';
 import 'package:irecipe/app/views/view_splash/view_model/splash_state.dart';
 import 'package:irecipe/app/views/view_splash/view_model/splash_view_model.dart';
+import 'package:irecipe/gen/assets.gen.dart';
 
 @RoutePage()
 class SplashView extends StatelessWidget {
@@ -21,7 +22,7 @@ class SplashView extends StatelessWidget {
                 color: Theme.of(context).scaffoldBackgroundColor,
                 child: Center(
                     child: SvgPicture.asset(
-                  'assets/images/svg/iRecipe.svg',
+                  Assets.images.svg.iRecipe,
                   height: 100,
                 ))));
       }),
