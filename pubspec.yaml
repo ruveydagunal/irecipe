@@ -15,7 +15,6 @@ dependencies:
   lottie: ^2.6.0
   cupertino_icons: ^1.0.2
   flavor: ^2.0.0
-  google_fonts: ^6.1.0
   intl: ^0.18.0
   flutter_localizations:
     sdk: flutter

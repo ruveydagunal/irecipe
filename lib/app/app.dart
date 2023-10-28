@@ -2,6 +2,7 @@
 import 'package:flavor/flavor.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/theme/light_theme.dart';
 
@@ -62,9 +63,12 @@ class _AppState extends State<App> {
     return FlavorBanner(
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
+        supportedLocales: L10n.supportedLocales,
+        localizationsDelegates: L10n.localizationsDelegates,
         theme: _themeData,
         locale: _locale,
-        routerConfig: _appRouter.config(),
+        routerConfig:
+            _appRouter.config(navigatorObservers: () => [NavigatorObserver()]),
       ),
     );
   }

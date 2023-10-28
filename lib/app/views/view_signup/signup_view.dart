@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_signup/view_model/signup_event.dart';
 import 'package:irecipe/app/views/view_signup/view_model/signup_state.dart';
@@ -26,18 +27,18 @@ class SignUpView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Kayıt Olun',
+              Text(L10n.of(context)!.signUp,
                   style: TextStyle(
                       color: Colors.orange[800],
                       fontSize: 40,
                       fontWeight: FontWeight.w500)),
               Row(
                 children: [
-                  const Text('Hesabınız Var mı?', style: TextStyle(fontSize: 16)),
+                   Text(L10n.of(context)!.doHaveAccount, style: TextStyle(fontSize: 16)),
                   TextButton(
                       onPressed: () => context.router.push(SignInViewRoute()),
                       child: Text(
-                        'Giriş Yap',
+                        L10n.of(context)!.signIn,
                         style:
                             TextStyle(color: Colors.orange[800], fontSize: 16),
                       ))
@@ -48,7 +49,7 @@ class SignUpView extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextInput(
-                      label: 'İsim',
+                      label: L10n.of(context)!.name,
                       inputFormatters: [
                         FilteringTextInputFormatter.deny(RegExp(r'[0-9]'))
                       ],
@@ -56,13 +57,13 @@ class SignUpView extends StatelessWidget {
                       controller: context.read<SignUpViewModel>().nameController,
                       validator: (value) {
                         if (context.read<SignUpViewModel>().nameController.text.isEmpty) {
-                          return "Lütfen İsim Giriniz";
+                          return L10n.of(context)!.nameMessage;
                         }
                         return null;
                       },
                     ),
                     CustomTextInput(
-                      label: 'Soyisim',
+                      label: L10n.of(context)!.surname,
                       inputFormatters: [
                         FilteringTextInputFormatter.deny(RegExp(r'[0-9]'))
                       ],
@@ -70,31 +71,31 @@ class SignUpView extends StatelessWidget {
                       controller: context.read<SignUpViewModel>().surnameController,
                       validator: (value) {
                         if (context.read<SignUpViewModel>().surnameController.text.isEmpty) {
-                          return "Lütfen Soyisim Giriniz";
+                          return L10n.of(context)!.surnameMessage;
                         }
                         return null;
                       },
                     ),
                     CustomTextInput(
-                      label: 'Email',
+                      label: L10n.of(context)!.email,
                       icon: const Icon(Icons.email_outlined),
                       controller: context.read<SignUpViewModel>().emailController,
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value!)) {
-                          return "Lütfen Geçerli Bir Mail Adresi Giriniz";
+                          return L10n.of(context)!.validEmailMessage;
                         }
                         return null;
                       },
                     ),
                     CustomTextInput(
-                        label: 'Şifre',
+                        label: L10n.of(context)!.password,
                         textInputAction: TextInputAction.done,
                         icon: const Icon(Icons.key_outlined),
                         controller: context.read<SignUpViewModel>().passwordController,
                         validator: (value) {
                           if (context.read<SignUpViewModel>().passwordController.text.isEmpty) {
-                            return "Lütfen İsim Soyisim Giriniz";
+                            return L10n.of(context)!.validPasswordMesaage;
                           }
                           return null;
                         }),
@@ -107,7 +108,7 @@ class SignUpView extends StatelessWidget {
                             .read<SignUpViewModel>()
                             .add(SignUpInitialEvent(context));
                       },
-                      buttonText: 'Kayıt Ol',
+                      buttonText: L10n.of(context)!.signUp,
                     ),
                   ],
                 ),

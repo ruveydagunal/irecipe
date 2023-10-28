@@ -1,6 +1,22 @@
 
 {
-    
-    "language":"English"
+    "languageSelect": "English",
+    "next": "Next",
+    "takeStepWorldMeals": "Take a Step Into The Enchanting World of Meals",
+    "awaitYou" : "Thousands of Delightful Recipes Await You",
+    "clickBegin" : "Click to Begin Cooking Right Away",
+    "signIn" : "Sign In",
+    "dontHaveAccount" : "Don't You Have an Account?",
+    "signUp" : "Sign Up",
+    "email" : "Email",
+    "validEmailMessage" : "Please Enter a Valid E-Mail Address",
+    "validPasswordMesaage" : "Please Enter The Password",
+    "password" : "Password",
+    "doHaveAccount" : "Do You Have an Account?",
+    "nameMessage" : "Please Enter Your Name",
+    "name" : "Name",
+    "surname" : "Surname",
+    "surnameMessage" : "Please Enter Your Surname"
+
     
 }

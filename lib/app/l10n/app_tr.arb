@@ -1,3 +1,20 @@
+
 {
-    "language":"Türkçe"
+    "languageSelect":"Türkçe",
+    "next": "Sonraki",
+    "takeStepWorldMeals": "Yemeklerin Büyülü Dünyasına Adım Atın",
+    "awaitYou" : "Binlerce Nefis Tarif Sizi Bekliyor",
+    "clickBegin" : "Yemek Yapmaya Başlamak İçin Şimdi Tıklayın",
+    "signIn" : "Giriş Yapın",
+    "dontHaveAccount" : "Hesabınız Yok mu?",
+    "signUP" : "Kayıt Ol",
+    "email" : "Eposta",
+    "validEmailMessage" : "Lütfen Geçerli Bir Mail Adresi Giriniz",
+    "validPasswordMesaage" : "Lütfen Şifre Giriniz",
+    "password" : "Şifre", 
+    "doHaveAccount" : "Hesabınız Var mı?",
+    "nameMessage" : "Lütfen İsim Giriniz",
+    "name" : "İsim",
+    "surname" : "Soyisim",
+    "surnameMessage" : "Lütfen Soyisim Giriniz"
 }
