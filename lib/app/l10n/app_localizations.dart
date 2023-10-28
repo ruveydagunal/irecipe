@@ -194,6 +194,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Please Enter Your Surname'**
   String get surnameMessage;
+
+  /// No description provided for @exitMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking Out'**
+  String get exitMessage;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -54,4 +54,7 @@ class L10nEn extends L10n {
 
   @override
   String get surnameMessage => 'Please Enter Your Surname';
+
+  @override
+  String get exitMessage => 'Checking Out';
 }

@@ -54,4 +54,7 @@ class L10nTr extends L10n {
 
   @override
   String get surnameMessage => 'Lütfen Soyisim Giriniz';
+
+  @override
+  String get exitMessage => 'Çıkış yapılıyor';
 }

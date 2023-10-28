@@ -16,5 +16,6 @@
     "nameMessage" : "Lütfen İsim Giriniz",
     "name" : "İsim",
     "surname" : "Soyisim",
-    "surnameMessage" : "Lütfen Soyisim Giriniz"
+    "surnameMessage" : "Lütfen Soyisim Giriniz",
+    "exitMessage" : "Çıkış yapılıyor"
 }

@@ -16,7 +16,8 @@
     "nameMessage" : "Please Enter Your Name",
     "name" : "Name",
     "surname" : "Surname",
-    "surnameMessage" : "Please Enter Your Surname"
+    "surnameMessage" : "Please Enter Your Surname",
+    "exitMessage" : "Checking Out"
 
     
 }
