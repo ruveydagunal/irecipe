@@ -12,6 +12,7 @@ final class ColorConstants {
 
   //button color
   static const Color buttonColor = Colors.orange;
+  static Color containerColorLight = Colors.orange.shade300;
 
   //background color
   static const Color bgLight = Colors.white;
