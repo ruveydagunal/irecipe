@@ -4,5 +4,6 @@ abstract class SignUpEvent {}
 
 class SignUpInitialEvent extends SignUpEvent {
   BuildContext context;
+  
   SignUpInitialEvent(this.context);
 }

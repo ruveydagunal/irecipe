@@ -9,7 +9,8 @@ import 'package:irecipe/app/views/view_signin/view_model/signin_event.dart';
 import 'package:irecipe/app/views/view_signin/view_model/signin_state.dart';
 import 'package:irecipe/core/repository/model/auth/signin/signin_request_model.dart';
 import 'package:irecipe/core/repository/service/auth_service.dart';
-import 'package:irecipe/core/widgets/snackbar_widget.dart';
+
+import 'package:super_toast/super_toast.dart';
 
 class SignInViewModel extends Bloc<SignInEvent, SignInState> {
   SignInViewModel() : super(SignInInitialState()) {
@@ -27,12 +28,7 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
       await authService.signIn(SignInRequestModel(
           email: emailController.text.trim(),
           password: passwordController.text.trim()));
-      ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          content: SnackBarWidget.success(
-            subTitle: 'Giriş başarılı, ana sayfaya yönlendiriliyorsunuz...',
-          )));
+          SuperToast.showInfo(event.context, message: 'Giriş başarılı, ana sayfaya yönlendiriliyorsunuz...');
        Future.delayed(const Duration(seconds: 2), () {
      event.context.router.push(HomeViewRoute());
     });
@@ -41,20 +37,10 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
       FirebaseAuthException exception = e as FirebaseAuthException;
       exception.code == 'invalid-email'
           ? Future.delayed(const Duration(seconds: 2), () {
-              ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  content: SnackBarWidget.error(
-                    subTitle: 'Email formatınız hatalı',
-                  )));
+              SuperToast.showFail(event.context, message: 'Email Formatı Hatalı');
             })
           : Future.delayed(const Duration(seconds: 2), () {
-              ScaffoldMessenger.of(event.context).showSnackBar(SnackBar(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  content: SnackBarWidget.error(
-                    subTitle: 'Email veya şifre hatalı',
-                  )));
+            SuperToast.showFail(event.context, message: 'Email veya Şifre Hatalı');
             });
     }
   }
