@@ -16,7 +16,7 @@ class SplashViewModel extends Bloc<SplashEvent, SplashState> {
       SplashInitialEvent event, Emitter<SplashState> emit) async {
     Future.delayed(const Duration(seconds: 3), () async {
       await _authService.isSignedIn()
-          ? event.context.router.replace(HomeViewRoute())
+          ? event.context.router.replace(BottomNavigationWidgetRoute())
           : event.context.router.replace(OnboardingViewRoute());
     });
   }
