@@ -29,7 +29,7 @@ class SignInView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(L10n.of(context)!.signIn,
-                  style: TextStyle(color: Colors.orange[800], fontSize: 40, fontWeight: FontWeight.w500)),
+                  style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 40, fontWeight: FontWeight.w500)),
               Row(
                       children: [
                         Text(L10n.of(context)!.dontHaveAccount,
@@ -39,7 +39,7 @@ class SignInView extends StatelessWidget {
                             child: Text(
                               L10n.of(context)!.signUp,
                               style:  TextStyle(
-                                      color: Colors.orange[800], fontSize: 16),
+                                      color:Theme.of(context).primaryColor, fontSize: 16),
                             ))
                       ],
                     ),
@@ -63,15 +63,12 @@ class SignInView extends StatelessWidget {
                     ),
                      CustomPasswordTextField(
                       controller: context.read<SignInViewModel>().passwordController,
-                      // inputFormatters: [
-                      //   FilteringTextInputFormatter.deny(RegExp(r'[0-9]'))
-                      // ],
-                      validator: (value) {
-                        if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value!)) {
-                          return L10n.of(context)!.validEmailMessage;
-                        }
-                        return null;
-                      },
+                       validator: (value) {
+                          if (!RegExp(r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$").hasMatch(value!)) {
+                            return L10n.of(context)!.validPasswordMessage;
+                          }
+                          return null;
+                        },
                     ),
                     SizedBox(
                       height: 20,

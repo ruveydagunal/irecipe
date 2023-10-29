@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irecipe/core/constanst/color_constants.dart';
 
 class CustomButton extends StatelessWidget {
   final String buttonText;
@@ -15,10 +16,10 @@ class CustomButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             buttonText,
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: TextStyle(color: ColorConstants.textDark, fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.orange[800],
+            backgroundColor: Theme.of(context).primaryColor,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10) )
             
           )),

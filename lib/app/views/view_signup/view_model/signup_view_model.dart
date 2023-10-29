@@ -14,6 +14,7 @@ class SignUpViewModel extends Bloc<SignUpEvent, SignUpState> {
     on<SignUpInitialEvent>(_onSignUpInitialEvent);
   }
 
+  GlobalKey<FormState> formKey = GlobalKey();
   TextEditingController nameController = TextEditingController();
   TextEditingController surnameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
