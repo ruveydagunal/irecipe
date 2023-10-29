@@ -31,6 +31,13 @@ class HomeView extends StatelessWidget {
         ],
         title: const Text('HomeView'),
       ),
+      body: Column(
+        children: [
+          IconButton(onPressed: (){
+            context.router.push(FavoriteViewRoute());
+          }, icon: Icon(Icons.favorite_border))
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:irecipe/app/views/view_favorite/favorite_view.dart';
 import 'package:irecipe/app/views/view_home/home_view.dart';
 import 'package:irecipe/app/views/view_onboarding/onboarding_view.dart';
 import 'package:irecipe/app/views/view_settings/settings_view.dart';
@@ -20,8 +21,8 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: SignUpViewRoute.page),
         AutoRoute(page: SignInViewRoute.page),
         AutoRoute(page: HomeViewRoute.page),
-        AutoRoute(page: SettingsViewRoute.page)
-        
+        AutoRoute(page: SettingsViewRoute.page),
+        AutoRoute(page: FavoriteViewRoute.page)
         
       ];
 }

@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    FavoriteViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FavoriteView(),
+      );
+    },
     HomeViewRoute.name: (routeData) {
       final args = routeData.argsAs<HomeViewRouteArgs>(
           orElse: () => const HomeViewRouteArgs());
@@ -60,6 +66,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [FavoriteView]
+class FavoriteViewRoute extends PageRouteInfo<void> {
+  const FavoriteViewRoute({List<PageRouteInfo>? children})
+      : super(
+          FavoriteViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FavoriteViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

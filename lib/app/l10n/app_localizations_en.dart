@@ -35,7 +35,7 @@ class L10nEn extends L10n {
   String get validEmailMessage => 'Please Enter a Valid E-Mail Address';
 
   @override
-  String get validPasswordMessage => 'Please Enter The Password';
+  String get validPasswordMessage => 'Please Enter a Valid Password';
 
   @override
   String get password => 'Password';
@@ -77,7 +77,7 @@ class L10nEn extends L10n {
   String get language => 'Language';
 
   @override
-  String get successLoginMessage => 'The Login Is Successful, You Are Redirected To The Homepage';
+  String get successLoginMessage => 'You Are Redirected To The Homepage';
 
   @override
   String get inCorrectEmailFormatMessage => 'The Email Format Is Incorrect';

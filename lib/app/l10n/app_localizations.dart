@@ -156,7 +156,7 @@ abstract class L10n {
   /// No description provided for @validPasswordMessage.
   ///
   /// In en, this message translates to:
-  /// **'Please Enter The Password'**
+  /// **'Please Enter a Valid Password'**
   String get validPasswordMessage;
 
   /// No description provided for @password.
@@ -240,7 +240,7 @@ abstract class L10n {
   /// No description provided for @successLoginMessage.
   ///
   /// In en, this message translates to:
-  /// **'The Login Is Successful, You Are Redirected To The Homepage'**
+  /// **'You Are Redirected To The Homepage'**
   String get successLoginMessage;
 
   /// No description provided for @inCorrectEmailFormatMessage.
