@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:irecipe/core/constanst/color_constants.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 
-mixin SettingsWidget {
-  Widget settingsContainer({
+mixin ProfileWidgets {
+  Widget profileButton({
     required BuildContext context,
     required String text,
     required IconData suffixIcon,
@@ -38,6 +38,7 @@ mixin SettingsWidget {
           ),
           style: ElevatedButton.styleFrom(
             backgroundColor: ColorConstants.containerColorLight,
+            elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
@@ -46,5 +47,15 @@ mixin SettingsWidget {
     ));
   }
 
+   Widget profileInfoContainer({String? initialValue, required String label }) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextFormField(
+        decoration: InputDecoration(label: Text(label)),
+       initialValue: initialValue,
+       readOnly: true,
+      ),
+    );
+  }
  
 }

@@ -15,10 +15,26 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AddingRecipeViewRoute.name: (routeData) {
+      final args = routeData.argsAs<AddingRecipeViewRouteArgs>(
+          orElse: () => const AddingRecipeViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AddingRecipeView(key: args.key),
+      );
+    },
     BottomNavigationWidgetRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const BottomNavigationWidget(),
+      );
+    },
+    CategoriesViewRoute.name: (routeData) {
+      final args = routeData.argsAs<CategoriesViewRouteArgs>(
+          orElse: () => const CategoriesViewRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CategoriesView(key: args.key),
       );
     },
     FavoriteViewRoute.name: (routeData) {
@@ -39,6 +55,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OnboardingView(),
+      );
+    },
+    ProfileViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfileView(),
       );
     },
     SettingsViewRoute.name: (routeData) {
@@ -75,6 +97,35 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [AddingRecipeView]
+class AddingRecipeViewRoute extends PageRouteInfo<AddingRecipeViewRouteArgs> {
+  AddingRecipeViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AddingRecipeViewRoute.name,
+          args: AddingRecipeViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'AddingRecipeViewRoute';
+
+  static const PageInfo<AddingRecipeViewRouteArgs> page =
+      PageInfo<AddingRecipeViewRouteArgs>(name);
+}
+
+class AddingRecipeViewRouteArgs {
+  const AddingRecipeViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AddingRecipeViewRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
 /// [BottomNavigationWidget]
 class BottomNavigationWidgetRoute extends PageRouteInfo<void> {
   const BottomNavigationWidgetRoute({List<PageRouteInfo>? children})
@@ -86,6 +137,35 @@ class BottomNavigationWidgetRoute extends PageRouteInfo<void> {
   static const String name = 'BottomNavigationWidgetRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CategoriesView]
+class CategoriesViewRoute extends PageRouteInfo<CategoriesViewRouteArgs> {
+  CategoriesViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CategoriesViewRoute.name,
+          args: CategoriesViewRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'CategoriesViewRoute';
+
+  static const PageInfo<CategoriesViewRouteArgs> page =
+      PageInfo<CategoriesViewRouteArgs>(name);
+}
+
+class CategoriesViewRouteArgs {
+  const CategoriesViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CategoriesViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -141,6 +221,20 @@ class OnboardingViewRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'OnboardingViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfileView]
+class ProfileViewRoute extends PageRouteInfo<void> {
+  const ProfileViewRoute({List<PageRouteInfo>? children})
+      : super(
+          ProfileViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
