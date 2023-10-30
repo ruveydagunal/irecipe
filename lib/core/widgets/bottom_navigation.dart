@@ -20,7 +20,7 @@ class _ButtomNavigationWidgetState extends State<BottomNavigationWidget> {
         extendBodyBehindAppBar: true,
         lazyLoad: false,
         resizeToAvoidBottomInset: false,
-        routes: [HomeViewRoute(), const FavoriteViewRoute(), SettingsViewRoute()],
+        routes: [HomeViewRoute(), CategoriesViewRoute(), AddingRecipeViewRoute(), FavoriteViewRoute(), ProfileViewRoute()],
         bottomNavigationBuilder: (context, tabsRouter) {
           return Stack(
             children: [
@@ -45,17 +45,25 @@ class _ButtomNavigationWidgetState extends State<BottomNavigationWidget> {
                         onTap: tabsRouter.setActiveIndex,
                         items: [
                           const BottomNavigationBarItem(
-                              label: 'Home',
+                              label: 'Anasayfa',
                               activeIcon: Icon(Icons.home),
                               icon: Icon(Icons.home_outlined)),
+                              BottomNavigationBarItem(
+                              label: 'Kategoriler',
+                              activeIcon: Icon(Icons.category),
+                              icon: Icon(Icons.category_outlined)),
+                              BottomNavigationBarItem(
+                              label: 'Ekle',
+                              activeIcon: Icon(Icons.add_circle),
+                              icon: Icon(Icons.add_circle_outline)),
                           const BottomNavigationBarItem(
-                              label: 'My Favorites',
+                              label: 'Favorites',
                               activeIcon: Icon(Icons.favorite),
                               icon: Icon(Icons.favorite_border)),
                           const BottomNavigationBarItem(
-                              label: 'Settings',
-                              activeIcon: Icon(Icons.settings),
-                              icon: Icon(Icons.settings_outlined))
+                              label: 'Profil',
+                              activeIcon: Icon(Icons.person),
+                              icon: Icon(Icons.person_outline))
                         ],
                       ),
                     ),
