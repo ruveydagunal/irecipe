@@ -266,6 +266,66 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Privacy'**
   String get privacy;
+
+  /// No description provided for @categories.
+  ///
+  /// In en, this message translates to:
+  /// **'Categories'**
+  String get categories;
+
+  /// No description provided for @myFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'My Favorites'**
+  String get myFavorites;
+
+  /// No description provided for @recipeDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipe Details'**
+  String get recipeDetails;
+
+  /// No description provided for @iRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'iRecipe'**
+  String get iRecipe;
+
+  /// No description provided for @myProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'My Profile'**
+  String get myProfile;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get favorites;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome'**
+  String get welcome;
+
+  /// No description provided for @myRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'My Recipe'**
+  String get myRecipe;
+
+  /// No description provided for @personalInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Info'**
+  String get personalInfo;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

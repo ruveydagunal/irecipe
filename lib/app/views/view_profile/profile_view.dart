@@ -4,6 +4,7 @@ import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_profile/widgets/profile_widgets.dart';
 import 'package:irecipe/core/constanst/color_constants.dart';
+import 'package:irecipe/core/extensions/context_extension.dart';
 
 @RoutePage()
 class ProfileView extends StatelessWidget with ProfileWidgets {
@@ -13,7 +14,7 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('My Profile'),
+          title: Text(L10n.of(context)!.myFavorites,),
         ),
         body: Column(
           children: [
@@ -22,7 +23,7 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
               child: Container(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Hoşgeldin Ruveyda',
+                    L10n.of(context)!.welcome,
                     style: TextStyle(
                         color: ColorConstants.containerColorLight,
                         fontSize: 20,
@@ -31,7 +32,7 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
             ),
             profileButton(
                 context: context,
-                text: 'Personal Info',
+                text: L10n.of(context)!.personalInfo,
                 suffixIcon: Icons.person,
                 onPressed: () {
                   showModalBottomSheet(
@@ -40,7 +41,7 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                       return Container(
                         height: 300,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: context.paddingNormal,
                           child: Column(
                             children: [
                               profileInfoContainer(
@@ -58,12 +59,12 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                 }),
             profileButton(
                 context: context,
-                text: 'My Recipe',
+                text: L10n.of(context)!.myRecipe,
                 suffixIcon: Icons.restaurant_menu_outlined,
                 onPressed: () {}),
             profileButton(
                 context: context,
-                text: 'Settings',
+                text: L10n.of(context)!.settings,
                 suffixIcon: Icons.settings,
                 onPressed: () {
                   context.router.push(SettingsViewRoute());

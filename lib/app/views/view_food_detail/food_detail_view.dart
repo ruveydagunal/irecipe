@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/core/constanst/color_constants.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 
@@ -11,7 +12,7 @@ class DetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipe Details'),
+        title: Text(L10n.of(context)!.email,),
       ),
       body: SingleChildScrollView(
         child: Padding(

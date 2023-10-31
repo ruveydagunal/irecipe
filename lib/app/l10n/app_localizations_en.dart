@@ -90,4 +90,34 @@ class L10nEn extends L10n {
 
   @override
   String get privacy => 'Privacy';
+
+  @override
+  String get categories => 'Categories';
+
+  @override
+  String get myFavorites => 'My Favorites';
+
+  @override
+  String get recipeDetails => 'Recipe Details';
+
+  @override
+  String get iRecipe => 'iRecipe';
+
+  @override
+  String get myProfile => 'My Profile';
+
+  @override
+  String get favorites => 'Favorites';
+
+  @override
+  String get welcome => 'Welcome';
+
+  @override
+  String get myRecipe => 'My Recipe';
+
+  @override
+  String get personalInfo => 'Personal Info';
+
+  @override
+  String get home => 'Home';
 }

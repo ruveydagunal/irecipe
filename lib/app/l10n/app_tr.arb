@@ -28,7 +28,18 @@
     "inCorrectEmailFormatMessage" : "Eposta Formatı Hatalı",
     "inCorrectEmailPasswordMessage" : "Eposta ya da Şifre Hatalı",
     "about": "Hakkında",
-    "privacy" :"Gizlilik"
+    "privacy" :"Gizlilik",
+    "categories" : "Kategoriler",
+    "myFavorites" : "Favorilerim",
+    "recipeDetails" : "Tarif Detayları",
+    "iRecipe" : "iRecipe",
+    "myProfile" : "Profilim",
+    "favorites" : "Favoriler",
+    "welcome" : "Hoşgeldin",
+    "myRecipe" : "Tariflerim",
+    "personalInfo" : "Kişisel Bilgiler",
+    "home" : "Anasayfa"
+    
     
     
 }

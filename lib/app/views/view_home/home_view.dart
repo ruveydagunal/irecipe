@@ -1,6 +1,7 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/repository/service/auth_service.dart';
@@ -26,7 +27,7 @@ class HomeView extends StatelessWidget {
               },
               icon: const Icon(Icons.settings_outlined))
         ],
-        title: const Text('HomeView'),
+        title: Text(L10n.of(context)!.iRecipe,),
       ),
       body: ListView.builder(
         itemCount: 10,

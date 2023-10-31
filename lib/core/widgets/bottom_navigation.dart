@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/core/constanst/color_constants.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
@@ -44,24 +45,24 @@ class _ButtomNavigationWidgetState extends State<BottomNavigationWidget> {
                         currentIndex: tabsRouter.activeIndex,
                         onTap: tabsRouter.setActiveIndex,
                         items: [
-                          const BottomNavigationBarItem(
-                              label: 'Anasayfa',
+                           BottomNavigationBarItem(
+                              label: L10n.of(context)!.home,
                               activeIcon: Icon(Icons.home),
                               icon: Icon(Icons.home_outlined)),
                               BottomNavigationBarItem(
-                              label: 'Kategoriler',
+                              label: L10n.of(context)!.categories,
                               activeIcon: Icon(Icons.category),
                               icon: Icon(Icons.category_outlined)),
                               BottomNavigationBarItem(
                               label: 'Ekle',
                               activeIcon: Icon(Icons.add_circle),
                               icon: Icon(Icons.add_circle_outline)),
-                          const BottomNavigationBarItem(
-                              label: 'Favorites',
+                           BottomNavigationBarItem(
+                              label: L10n.of(context)!.favorites,
                               activeIcon: Icon(Icons.favorite),
                               icon: Icon(Icons.favorite_border)),
-                          const BottomNavigationBarItem(
-                              label: 'Profil',
+                           BottomNavigationBarItem(
+                              label: L10n.of(context)!.profile,
                               activeIcon: Icon(Icons.person),
                               icon: Icon(Icons.person_outline))
                         ],

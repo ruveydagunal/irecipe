@@ -90,4 +90,34 @@ class L10nTr extends L10n {
 
   @override
   String get privacy => 'Gizlilik';
+
+  @override
+  String get categories => 'Kategoriler';
+
+  @override
+  String get myFavorites => 'Favorilerim';
+
+  @override
+  String get recipeDetails => 'Tarif Detayları';
+
+  @override
+  String get iRecipe => 'iRecipe';
+
+  @override
+  String get myProfile => 'Profilim';
+
+  @override
+  String get favorites => 'Favoriler';
+
+  @override
+  String get welcome => 'Hoşgeldin';
+
+  @override
+  String get myRecipe => 'Tariflerim';
+
+  @override
+  String get personalInfo => 'Kişisel Bilgiler';
+
+  @override
+  String get home => 'Anasayfa';
 }
