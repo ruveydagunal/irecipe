@@ -28,7 +28,17 @@
     "inCorrectEmailFormatMessage" : "The Email Format Is Incorrect",
     "inCorrectEmailPasswordMessage" : "The Email or Password is Incorrect",
     "about": "About",
-    "privacy" : "Privacy"
+    "privacy" : "Privacy",
+    "categories" : "Categories",
+    "myFavorites" : "My Favorites",
+    "recipeDetails" : "Recipe Details",
+    "iRecipe" : "iRecipe",
+    "myProfile" : "My Profile",
+    "favorites" : "Favorites",
+    "welcome" : "Welcome",
+    "myRecipe" : "My Recipe",
+    "personalInfo" : "Personal Info",
+    "home" : "Home"
 
     
 }
