@@ -17,9 +17,9 @@ class CategoriesView extends StatelessWidget {
           itemCount: 10,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 0.1,
-            crossAxisSpacing: 0.1,
-            childAspectRatio: 1,
+            // mainAxisSpacing: 0.01,
+            // crossAxisSpacing: 0.01,
+            // childAspectRatio: 1,
           ),
           itemBuilder: (context, index) {
             return Padding(

@@ -29,14 +29,18 @@ class HomeView extends StatelessWidget {
         title: const Text('HomeView'),
       ),
       body: ListView.builder(
-        
         itemCount: 10,
         itemBuilder: (context, index) {
         return Padding(
            padding: context.horizontalPaddingConstNormal + context.onlyTopPaddingMedium,
-           child: Container(
-             decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.orange[800],),
-             height: 150,
+           child: GestureDetector(
+              onTap: () {
+                context.router.push(DetailViewRoute());
+              },
+             child: Container(
+               decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.orange[800],),
+               height: 250,
+             ),
            ),
          );
       },),

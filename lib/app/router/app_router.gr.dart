@@ -37,6 +37,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: CategoriesView(key: args.key),
       );
     },
+    DetailViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child:  DetailView(),
+      );
+    },
     FavoriteViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -166,6 +172,20 @@ class CategoriesViewRouteArgs {
   String toString() {
     return 'CategoriesViewRouteArgs{key: $key}';
   }
+}
+
+/// generated route for
+/// [DetailView]
+class DetailViewRoute extends PageRouteInfo<void> {
+  const DetailViewRoute({List<PageRouteInfo>? children})
+      : super(
+          DetailViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DetailViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
