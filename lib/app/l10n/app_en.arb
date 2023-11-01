@@ -38,7 +38,11 @@
     "welcome" : "Welcome",
     "myRecipe" : "My Recipe",
     "personalInfo" : "Personal Info",
-    "home" : "Home"
+    "home" : "Home",
+    "add" : "Add",
+    "materials" : "Materials",
+    "preparation" : "Preparation",
+    "foodName" : "Food Name"
 
     
 }

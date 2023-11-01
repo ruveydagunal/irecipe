@@ -120,4 +120,16 @@ class L10nEn extends L10n {
 
   @override
   String get home => 'Home';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get materials => 'Materials';
+
+  @override
+  String get preparation => 'Preparation';
+
+  @override
+  String get foodName => 'Food Name';
 }

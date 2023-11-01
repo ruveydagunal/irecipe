@@ -38,7 +38,11 @@
     "welcome" : "Hoşgeldin",
     "myRecipe" : "Tariflerim",
     "personalInfo" : "Kişisel Bilgiler",
-    "home" : "Anasayfa"
+    "home" : "Anasayfa",
+    "add" : "Ekle",
+    "materials" : "Malzemeler",
+    "preparation" : "Hazırlanışı",
+    "foodName" : "Yemek İsmi"
     
     
     

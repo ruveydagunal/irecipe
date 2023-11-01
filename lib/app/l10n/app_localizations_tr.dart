@@ -120,4 +120,16 @@ class L10nTr extends L10n {
 
   @override
   String get home => 'Anasayfa';
+
+  @override
+  String get add => 'Ekle';
+
+  @override
+  String get materials => 'Malzemeler';
+
+  @override
+  String get preparation => 'Hazırlanışı';
+
+  @override
+  String get foodName => 'Yemek İsmi';
 }
