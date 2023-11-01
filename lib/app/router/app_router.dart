@@ -4,7 +4,6 @@ import 'package:irecipe/app/views/view_adding_recipe/adding_recipe_view.dart';
 import 'package:irecipe/app/views/view_categories/categories_view.dart';
 import 'package:irecipe/app/views/view_categories/detail_view.dart';
 import 'package:irecipe/app/views/view_favorite/favorite_view.dart';
-import 'package:irecipe/app/views/view_food_detail/food_detail_view.dart';
 import 'package:irecipe/app/views/view_home/home_view.dart';
 import 'package:irecipe/app/views/view_onboarding/onboarding_view.dart';
 import 'package:irecipe/app/views/view_profile/profile_view.dart';
@@ -36,6 +35,6 @@ class AppRouter extends _$AppRouter {
           AutoRoute(page: FavoriteViewRoute.page),
           AutoRoute(page: ProfileViewRoute.page)
         ]),
-        AutoRoute(page: DetailViewRoute.page),
+        
       ];
 }
