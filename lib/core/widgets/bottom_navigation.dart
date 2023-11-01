@@ -28,7 +28,7 @@ class _ButtomNavigationWidgetState extends State<BottomNavigationWidget> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  margin: context.onlyBottomPaddingMedium,
+                  // margin: context.onlyBottomPaddingMedium,
                   alignment: Alignment.topCenter,
                   height: context.height * 0.08,
                   child: ClipRRect(
