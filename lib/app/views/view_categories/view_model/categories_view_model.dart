@@ -1,0 +1,42 @@
+import 'dart:async';
+
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:irecipe/app/views/view_categories/view_model/categories_event.dart';
+import 'package:irecipe/app/views/view_categories/view_model/categories_state.dart';
+
+class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
+  CategoriesViewModel()
+      : super(CategoriesInitialState(
+          recipe: [],
+        )) {
+    on<CategoriesInitialEvent>(_initial);
+    on<CurrentPageIndexEvent>(_currentPageIndex);;
+  }
+
+  final databaseReference = FirebaseDatabase.instance.ref();
+
+  Future<FutureOr<void>> _initial(
+      CategoriesInitialEvent event, Emitter<CategoriesState> emit) async {
+    DatabaseReference mainReference =
+        FirebaseDatabase.instance.ref('main');
+    await mainReference.get().then((DataSnapshot snapshot) {
+      if (snapshot.value != null) {
+        List<dynamic>? recipes = snapshot.value as List<dynamic>;
+        recipes.shuffle();
+        emit(CategoriesInitialState(
+          recipe: recipes,
+        ));
+      }
+    });
+  }
+
+   FutureOr<void> _currentPageIndex(
+      CurrentPageIndexEvent event, Emitter<CategoriesState> emit) {
+    emit(CurrentPageIndexState(event.currentIndex));
+  }
+}
+
+
+
+ 
