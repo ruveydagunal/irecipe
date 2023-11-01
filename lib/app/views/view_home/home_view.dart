@@ -33,7 +33,6 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               body: ListView.builder(
-                
                 shrinkWrap: true,
                 itemCount: state.recipes!.length,
                 itemBuilder: (context, index) {

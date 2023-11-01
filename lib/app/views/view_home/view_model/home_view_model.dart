@@ -10,9 +10,7 @@ class HomeViewModel extends Bloc<HomeEvent, HomeState> {
     on<HomeInitialEvent>(_initial);
   }
 
-  final databaseReference = FirebaseDatabase.instance.ref('recipes');
-
-  final List<dynamic> recipes = [];
+  final databaseReference = FirebaseDatabase.instance.ref();
 
   Future<FutureOr<void>> _initial(
       HomeInitialEvent event, Emitter<HomeState> emit) async {
