@@ -21,55 +21,78 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
         child: BlocConsumer<CategoriesViewModel, CategoriesState>(
           listener: (context, state) {},
           builder: (context, state) {
-            return Scaffold(
-                appBar: AppBar(
-                    title: Text(
-                  L10n.of(context)!.categories,
-                )),
-                body: Padding(
-                  padding: context.paddingNormal,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            categoriesContainer(context, () {
-
-                              context.read<CategoriesViewModel>().add(
-                                    CurrentPageIndexEvent(
-                                        state.currentIndex + 1));
-                            }),
-                            categoriesContainer(context, () {})
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            categoriesContainer(context, () {}),
-                            categoriesContainer(context, () {})
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            categoriesContainer(context, () {}),
-                            categoriesContainer(context, () {})
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ));
+            return bodyWidget(state, context);
           },
         ));
   }
 
-   Widget bodyWidget(CurrentPageIndexState state) {
+  Widget categoryWidget(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            title: Text(
+          L10n.of(context)!.categories,
+        )),
+        body: Padding(
+          padding: context.paddingNormal,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'main', currentIndex: 1));
+                    }, 'Ana Yemekler'),
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'desserts', currentIndex: 1));
+                    }, 'Tatlılar')
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'soaps', currentIndex: 1));
+                    }, 'Çorbalar'),
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'salad', currentIndex: 1));
+                    }, 'Salatalar')
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'pastries', currentIndex: 1));
+                    }, 'Hamur İşleri'),
+                    categoriesContainer(context, () {
+                      context.read<CategoriesViewModel>().add(
+                          CategoriesInitialEvent(
+                              categoryName: 'appetizers', currentIndex: 1));
+                    }, 'Ara Sıcaklar')
+                  ],
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Widget bodyWidget(CategoriesState state, BuildContext context) {
     if (state.currentIndex == 0) {
-      return DetailView();
+      return categoryWidget(context);
     } else {
-      return Container();
+      return CategoryDetailView();
     }
   }
 }

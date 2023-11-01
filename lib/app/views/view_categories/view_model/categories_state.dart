@@ -1,20 +1,15 @@
 abstract class CategoriesState {
   List<dynamic>? recipe;
-  int currentIndex;
+  int? currentIndex;
 
-  CategoriesState(this.currentIndex, {this.recipe} );
+  CategoriesState({this.currentIndex = 0, this.recipe});
 }
 
 class CategoriesInitialState extends CategoriesState {
   @override
   List<dynamic>? recipe;
-  CategoriesInitialState({this.recipe, })
-      : super(recipe: recipe);
-}
+  int? currentIndex;
 
-class CurrentPageIndexState extends CategoriesState{
-
-  int currentIndex;
-
- CurrentPageIndexState(this.currentIndex);
+  CategoriesInitialState({this.recipe, this.currentIndex})
+      : super(recipe: recipe, currentIndex: currentIndex);
 }

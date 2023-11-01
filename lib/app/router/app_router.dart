@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:irecipe/app/views/view_adding_recipe/adding_recipe_view.dart';
 import 'package:irecipe/app/views/view_categories/categories_view.dart';
+import 'package:irecipe/app/views/view_categories/detail_view.dart';
 import 'package:irecipe/app/views/view_favorite/favorite_view.dart';
 import 'package:irecipe/app/views/view_food_detail/food_detail_view.dart';
 import 'package:irecipe/app/views/view_home/home_view.dart';

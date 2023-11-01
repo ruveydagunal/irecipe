@@ -7,11 +7,10 @@ import 'package:irecipe/app/views/view_categories/view_model/categories_state.da
 
 class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
   CategoriesViewModel()
-      : super(CategoriesInitialState(
-          recipe: [],
-        )) {
+      : super(CategoriesInitialState(recipe: [], currentIndex: 0)) {
     on<CategoriesInitialEvent>(_initial);
-    on<CurrentPageIndexEvent>(_currentPageIndex);;
+    on<CurrentPageIndexEvent>(_currentPageIndex);
+    ;
   }
 
   final databaseReference = FirebaseDatabase.instance.ref();
@@ -19,7 +18,7 @@ class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
   Future<FutureOr<void>> _initial(
       CategoriesInitialEvent event, Emitter<CategoriesState> emit) async {
     DatabaseReference mainReference =
-        FirebaseDatabase.instance.ref('main');
+        FirebaseDatabase.instance.ref(event.categoryName);
     await mainReference.get().then((DataSnapshot snapshot) {
       if (snapshot.value != null) {
         List<dynamic>? recipes = snapshot.value as List<dynamic>;
@@ -31,12 +30,11 @@ class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
     });
   }
 
-   FutureOr<void> _currentPageIndex(
+  FutureOr<void> _currentPageIndex(
       CurrentPageIndexEvent event, Emitter<CategoriesState> emit) {
-    emit(CurrentPageIndexState(event.currentIndex));
+    emit(CategoriesInitialState(
+      currentIndex: event.currentIndex,
+      recipe: state.recipe,
+    ));
   }
 }
-
-
-
- 

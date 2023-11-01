@@ -38,9 +38,11 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     DetailViewRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailViewRouteArgs>(
+          orElse: () => const DetailViewRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child:  DetailView(),
+        child: DetailView(key: args.key),
       );
     },
     FavoriteViewRoute.name: (routeData) {
@@ -176,16 +178,31 @@ class CategoriesViewRouteArgs {
 
 /// generated route for
 /// [DetailView]
-class DetailViewRoute extends PageRouteInfo<void> {
-  const DetailViewRoute({List<PageRouteInfo>? children})
-      : super(
+class DetailViewRoute extends PageRouteInfo<DetailViewRouteArgs> {
+  DetailViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           DetailViewRoute.name,
+          args: DetailViewRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'DetailViewRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<DetailViewRouteArgs> page =
+      PageInfo<DetailViewRouteArgs>(name);
+}
+
+class DetailViewRouteArgs {
+  const DetailViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'DetailViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
