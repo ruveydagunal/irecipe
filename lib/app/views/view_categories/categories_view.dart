@@ -9,6 +9,7 @@ import 'package:irecipe/app/views/view_categories/view_model/categories_view_mod
 import 'package:irecipe/app/views/view_categories/widget/categories_widgets.dart';
 
 import 'package:irecipe/core/extensions/context_extension.dart';
+import 'package:irecipe/gen/assets.gen.dart';
 
 @RoutePage()
 class CategoriesView extends StatelessWidget with CategoriesWidget {
@@ -44,12 +45,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'main', currentIndex: 1));
-                    }, 'Ana Yemekler'),
+                    }, Assets.images.jpg.main.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'desserts', currentIndex: 1));
-                    }, 'Tatlılar')
+                    }, Assets.images.jpg.desserts.path)
                   ],
                 ),
                 Row(
@@ -59,12 +60,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'soaps', currentIndex: 1));
-                    }, 'Çorbalar'),
+                    }, Assets.images.jpg.soaps.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'salad', currentIndex: 1));
-                    }, 'Salatalar')
+                    }, Assets.images.jpg.salads.path)
                   ],
                 ),
                 Row(
@@ -74,12 +75,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'pastries', currentIndex: 1));
-                    }, 'Hamur İşleri'),
+                    }, Assets.images.jpg.cake.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
                               categoryName: 'appetizers', currentIndex: 1));
-                    }, 'Ara Sıcaklar')
+                    }, Assets.images.jpg.appetizers.path)
                   ],
                 )
               ],

@@ -12,6 +12,7 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesJpgGen get jpg => const $AssetsImagesJpgGen();
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
@@ -30,6 +31,35 @@ class $AssetsLottiesGen {
 
   /// List of all assets
   List<String> get values => [animationBarbecue, animationCook, animationCut];
+}
+
+class $AssetsImagesJpgGen {
+  const $AssetsImagesJpgGen();
+
+  /// File path: assets/images/jpg/appetizers.jpg
+  AssetGenImage get appetizers =>
+      const AssetGenImage('assets/images/jpg/appetizers.jpg');
+
+  /// File path: assets/images/jpg/cake.jpg
+  AssetGenImage get cake => const AssetGenImage('assets/images/jpg/cake.jpg');
+
+  /// File path: assets/images/jpg/desserts.jpg
+  AssetGenImage get desserts =>
+      const AssetGenImage('assets/images/jpg/desserts.jpg');
+
+  /// File path: assets/images/jpg/main.jpg
+  AssetGenImage get main => const AssetGenImage('assets/images/jpg/main.jpg');
+
+  /// File path: assets/images/jpg/salads.jpg
+  AssetGenImage get salads =>
+      const AssetGenImage('assets/images/jpg/salads.jpg');
+
+  /// File path: assets/images/jpg/soaps.jpg
+  AssetGenImage get soaps => const AssetGenImage('assets/images/jpg/soaps.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [appetizers, cake, desserts, main, salads, soaps];
 }
 
 class $AssetsImagesPngGen {
