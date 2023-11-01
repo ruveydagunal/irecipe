@@ -54,7 +54,7 @@ class _ButtomNavigationWidgetState extends State<BottomNavigationWidget> {
                               activeIcon: Icon(Icons.category),
                               icon: Icon(Icons.category_outlined)),
                               BottomNavigationBarItem(
-                              label: 'Ekle',
+                              label: L10n.of(context)!.add,
                               activeIcon: Icon(Icons.add_circle),
                               icon: Icon(Icons.add_circle_outline)),
                            BottomNavigationBarItem(

@@ -33,7 +33,7 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                     child: Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          '${L10n.of(context)!.welcome} ${state.name!}',
+                          '${L10n.of(context)!.welcome}' ' ${state.name}',
                           style: TextStyle(
                               color: ColorConstants.containerColorLight,
                               fontSize: 20,
@@ -60,10 +60,12 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                                     ),
                                     profileInfoContainer(
                                         label: L10n.of(context)!.surname,
-                                        initialValue: state.surname),
+                                        initialValue: state.surname
+                                        ),
                                     profileInfoContainer(
                                         label: L10n.of(context)!.email,
-                                        initialValue: state.email),
+                                        initialValue: state.email
+                                        ),
                                   ],
                                 ),
                               ),

@@ -19,7 +19,7 @@ class FavoriteView extends StatelessWidget {
         return Padding(
               padding: context.horizontalPaddingConstNormal + context.onlyTopPaddingMedium,
               child: Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.orange[800],),
+                decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Colors.orange[200],),
                 height: 150,
               ),
             );
