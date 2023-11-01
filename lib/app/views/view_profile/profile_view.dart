@@ -29,13 +29,13 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
               body: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                    padding: context.horizontalPaddingConstNormal,
                     child: Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          '${L10n.of(context)!.welcome}' ' ${state.name}',
+                          '${L10n.of(context)!.welcome}' ' ${state.name != null ? state.name : ''}',
                           style: TextStyle(
-                              color: ColorConstants.containerColorLight,
+                              color: ColorConstants.primaryColor,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         )),
