@@ -1,12 +1,17 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
+import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/widgets/custom_input.dart';
 
 @RoutePage()
 class AddingRecipeView extends StatelessWidget {
   AddingRecipeView({super.key});
-
+  TextEditingController recipeName =  TextEditingController();
+  TextEditingController materials =  TextEditingController();
+  TextEditingController preparation =  TextEditingController();
   
 
   @override
@@ -17,11 +22,30 @@ class AddingRecipeView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // CustomTextInput(
-            
-          //   icon: Icon(Icons.email_outlined),
-          //   label: 'Yemek ismi',
-          // )
+          Padding(
+            padding: context.paddingLow,
+            child: CustomTextInput(
+              controller: recipeName,
+              icon: Icon(Icons.restaurant),
+              label: L10n.of(context)!.foodName,
+            ),
+          ),
+          Padding(
+            padding: context.paddingLow,
+            child: CustomTextInput(
+              controller: materials,
+              icon: Icon(Icons.list),
+              label: L10n.of(context)!.materials,
+            ),
+          ),
+          Padding(
+            padding: context.paddingLow,
+            child: CustomTextInput(
+              controller: preparation,
+              icon: Icon(Icons.restaurant),
+              label: L10n.of(context)!.preparation,
+            ),
+          )
         ],
       ),
     );
