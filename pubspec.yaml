@@ -26,6 +26,7 @@ dependencies:
   firebase_storage: ^11.2.8
   cloud_firestore: ^4.9.2
   firebase_auth: ^4.10.0
+  firebase_database: ^10.3.3
   uuid: ^4.1.0
   flutter_gen: ^5.3.1
   super_toast:
