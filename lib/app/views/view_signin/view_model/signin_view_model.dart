@@ -32,7 +32,7 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
           password: passwordController.text.trim()));
           SuperToast.showInfo(event.context, message: L10n.of(event.context)!.successLoginMessage);
        Future.delayed(const Duration(seconds: 2), () {
-     event.context.router.push(BottomNavigationWidgetRoute());
+     event.context.router.replace(BottomNavigationWidgetRoute());
     });
     } catch (e, stack) {
       FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
