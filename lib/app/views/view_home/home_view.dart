@@ -57,10 +57,14 @@ class HomeView extends StatelessWidget {
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Text(
-                                              state.recipes![index]['foodName'],
-                                              style:
-                                                  (const TextStyle(fontSize: 35)),
+                                            SizedBox(
+                                              width: context.width * 0.8,
+                                              child: Text(
+                                                state.recipes![index]['foodName'],
+                                                style:
+                                                    ( const TextStyle(fontSize: 35)),
+                                                    overflow: TextOverflow.ellipsis,
+                                              ),
                                             ),
                                             IconButton(onPressed: (){
                                               context.router.pop();
