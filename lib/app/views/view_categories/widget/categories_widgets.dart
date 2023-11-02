@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
-import 'package:irecipe/gen/assets.gen.dart';
+
 
 mixin CategoriesWidget {
   Widget categoriesContainer(

@@ -155,14 +155,14 @@ class CategoryDetailView extends StatelessWidget {
                                                 state.recipe![index]
                                                     ['foodName'],
                                                 style: context
-                                                    .textTheme.headlineSmall!,
+                                                    .textTheme.headlineSmall!.copyWith(color: ColorConstants.textLight),
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             IconButton(
                                                 onPressed: () {},
                                                 icon: Icon(
-                                                  Icons.favorite_outline,
+                                                  Icons.favorite_outline,color: ColorConstants.textLight,
                                                 ))
                                           ],
                                         ),
