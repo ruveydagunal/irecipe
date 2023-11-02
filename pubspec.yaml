@@ -29,6 +29,7 @@ dependencies:
   firebase_database: ^10.3.3
   uuid: ^4.1.0
   flutter_gen: ^5.3.1
+  hive_flutter: ^1.1.0
   super_toast:
     git:
       url: https://github.com/ruveydagunal/super_toast
@@ -53,3 +54,4 @@ flutter:
     - assets/lotties/
     - assets/images/png/
     - assets/images/svg/
+    - assets/images/jpg/

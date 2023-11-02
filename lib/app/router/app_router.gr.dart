@@ -38,9 +38,11 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     FavoriteViewRoute.name: (routeData) {
+      final args = routeData.argsAs<FavoriteViewRouteArgs>(
+          orElse: () => const FavoriteViewRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const FavoriteView(),
+        child: FavoriteView(key: args.key),
       );
     },
     HomeViewRoute.name: (routeData) {
@@ -170,16 +172,31 @@ class CategoriesViewRouteArgs {
 
 /// generated route for
 /// [FavoriteView]
-class FavoriteViewRoute extends PageRouteInfo<void> {
-  const FavoriteViewRoute({List<PageRouteInfo>? children})
-      : super(
+class FavoriteViewRoute extends PageRouteInfo<FavoriteViewRouteArgs> {
+  FavoriteViewRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           FavoriteViewRoute.name,
+          args: FavoriteViewRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'FavoriteViewRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<FavoriteViewRouteArgs> page =
+      PageInfo<FavoriteViewRouteArgs>(name);
+}
+
+class FavoriteViewRouteArgs {
+  const FavoriteViewRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'FavoriteViewRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
