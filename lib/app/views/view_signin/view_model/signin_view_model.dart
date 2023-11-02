@@ -30,7 +30,7 @@ class SignInViewModel extends Bloc<SignInEvent, SignInState> {
       await authService.signIn(SignInRequestModel(
           email: emailController.text.trim(),
           password: passwordController.text.trim()));
-          SuperToast.showInfo(event.context, message: L10n.of(event.context)!.successLoginMessage);
+          SuperToast.showSuccess(event.context, message: L10n.of(event.context)!.successLoginMessage);
        Future.delayed(const Duration(seconds: 2), () {
      event.context.router.replace(BottomNavigationWidgetRoute());
     });
