@@ -22,12 +22,15 @@ class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
       if (snapshot.value != null) {
         List<dynamic>? recipes = snapshot.value as List<dynamic>;
         recipes.shuffle();
+        emit(CategoriesInitialState(
+          recipe: recipes,
+        ));
+        
       }
-    });
-    List<dynamic>? mainItem = state.recipe
-        ?.where((element) => element['category'] == event.category)
-        .toList();
-    emit(CategoriesInitialState(recipe: mainItem));
+    }
+    );
+    List<dynamic>? mainItem = state.recipe?.where((element) => element['category'] == event.category).toList();
+    emit(CategoriesInitialState(recipe: mainItem ));
   }
 
   FutureOr<void> _currentPageIndex(
