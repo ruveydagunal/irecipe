@@ -11,7 +11,6 @@ import 'package:irecipe/core/repository/service/auth_service.dart';
 
 import 'package:uuid/uuid.dart';
 
-
 class CategoryDetailView extends StatelessWidget {
   CategoryDetailView({super.key});
   AuthService authService = AuthService();
@@ -36,10 +35,10 @@ class CategoryDetailView extends StatelessWidget {
             ),
           ),
           body: ListView.builder(
+            physics: BouncingScrollPhysics(),
             shrinkWrap: true,
             itemCount: state.recipe!.length,
             itemBuilder: (context, index) {
-              // print("state : " + state.recipe![index]['image']);
               return Padding(
                 padding: context.horizontalPaddingConstNormal +
                     context.onlyTopPaddingMedium,
@@ -61,10 +60,17 @@ class CategoryDetailView extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          state.recipe![index]['foodName'],
-                                          style:
-                                              (const TextStyle(fontSize: 35)),
+                                        SizedBox(
+                                          width: context.width * 0.7,
+                                          child: Text(
+                                            state.recipe![index]['foodName'],
+                                            style: context
+                                                .textTheme.headlineSmall!
+                                                .copyWith(
+                                                    color: ColorConstants
+                                                        .textLight),
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
                                         ),
                                         IconButton(
                                             onPressed: () {
@@ -84,7 +90,7 @@ class CategoryDetailView extends StatelessWidget {
                                               BorderRadius.circular(10)),
                                       height: 250,
                                     ),
-                                     Text(
+                                    Text(
                                       L10n.of(context)!.materials,
                                       style: (TextStyle(fontSize: 30)),
                                     ),
@@ -105,7 +111,7 @@ class CategoryDetailView extends StatelessWidget {
                                                 fontSize: 16)));
                                       },
                                     ),
-                                     Text(
+                                    Text(
                                       L10n.of(context)!.preparation,
                                       style: (TextStyle(fontSize: 30)),
                                     ),
@@ -155,14 +161,19 @@ class CategoryDetailView extends StatelessWidget {
                                                 state.recipe![index]
                                                     ['foodName'],
                                                 style: context
-                                                    .textTheme.headlineSmall!.copyWith(color: ColorConstants.textLight),
+                                                    .textTheme.headlineSmall!
+                                                    .copyWith(
+                                                        color: ColorConstants
+                                                            .textLight),
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
                                             IconButton(
                                                 onPressed: () {},
                                                 icon: Icon(
-                                                  Icons.favorite_outline,color: ColorConstants.textLight,
+                                                  Icons.favorite_outline,
+                                                  color:
+                                                      ColorConstants.textLight,
                                                 ))
                                           ],
                                         ),
