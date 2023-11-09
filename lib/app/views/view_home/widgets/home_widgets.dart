@@ -24,7 +24,7 @@ mixin HomeWidgets {
                     SizedBox(
                       width: context.width * 0.7,
                       child: Text(
-                        state.recipes![index]['foodName'],
+                        state.recipe_en![index]['foodName'],
                         style: context.textTheme.headlineSmall!.copyWith(color: ColorConstants.textLight),
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -36,10 +36,10 @@ mixin HomeWidgets {
                           var favorite =
                               userBox.get('favorites', defaultValue: []);
                           favorite.add([
-                            state.recipes![index]['foodName'],
-                            state.recipes![index]['image'],
-                            state.recipes![index]['materials'],
-                            state.recipes![index]['recipe'],
+                            state.recipe_en![index]['foodName'],
+                            state.recipe_en![index]['image'],
+                            state.recipe_en![index]['materials'],
+                            state.recipe_en![index]['recipe'],
                           ]);
                           userBox.put('favorites', favorite);
                         },

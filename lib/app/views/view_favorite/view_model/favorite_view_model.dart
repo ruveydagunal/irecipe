@@ -10,13 +10,11 @@ class FavoriteViewModel extends Bloc<FavoriteEvent, FavoriteState> {
     on<FavoriteInitialEvent>(_initial);
   }
 
-
   Future<FutureOr<void>> _initial(
       FavoriteInitialEvent event, Emitter<FavoriteState> emit) async {
-        
-        var userBox = Hive.box('userLocalDB');
+    var userBox = Hive.box('userLocalDB');
 
-        var recipes = userBox.get('favorites', defaultValue: []);
-        emit(FavoriteInitialState(recipes: recipes));
+    var recipes = userBox.get('favorites', defaultValue: []);
+    emit(FavoriteInitialState(recipes: recipes));
   }
 }

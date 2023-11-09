@@ -34,12 +34,17 @@ class FavoriteView extends StatelessWidget with FavoriteWidgets {
                 L10n.of(context)!.favorites,
               ),
               actions: [
-              IconButton(onPressed: (){
-                context.read<FavoriteViewModel>().add(FavoriteInitialEvent());
-              }, icon: Icon(Icons.refresh))
-            ],
+                IconButton(
+                    onPressed: () {
+                      context
+                          .read<FavoriteViewModel>()
+                          .add(FavoriteInitialEvent());
+                    },
+                    icon: Icon(Icons.refresh))
+              ],
             ),
             body: ListView.builder(
+              
               shrinkWrap: true,
               itemCount: state.recipes!.length,
               itemBuilder: (context, index) {
@@ -60,7 +65,8 @@ class FavoriteView extends StatelessWidget with FavoriteWidgets {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     SizedBox(
                                       width: context.width * 0.8,
@@ -91,12 +97,11 @@ class FavoriteView extends StatelessWidget with FavoriteWidgets {
                                   ),
                                   height: 250,
                                 ),
-                                const Text(
-                                  'Malzemeler',
+                                Text(
+                                  L10n.of(context)!.materials,
                                   style: TextStyle(fontSize: 30),
                                 ),
                                 ListView.builder(
-                                  
                                   shrinkWrap: true,
                                   itemCount: state.recipes![index][2].length,
                                   itemBuilder: (context, index2) {
@@ -106,8 +111,8 @@ class FavoriteView extends StatelessWidget with FavoriteWidgets {
                                     );
                                   },
                                 ),
-                                const Text(
-                                  'Hazırlanışı',
+                                Text(
+                                  L10n.of(context)!.preparation,
                                   style: TextStyle(fontSize: 30),
                                 ),
                                 Text(
@@ -128,15 +133,15 @@ class FavoriteView extends StatelessWidget with FavoriteWidgets {
                                 image: NetworkImage(state.recipes![index][1]),
                                 fit: BoxFit.cover,
                               ),
-                              borderRadius: const BorderRadius.all(Radius.circular(10)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)),
                             ),
                             height: 250,
                             child: ValueListenableBuilder(
-                              valueListenable: Hive.box('favorites').listenable(),
-                              
+                              valueListenable:
+                                  Hive.box('favorites').listenable(),
                               builder: (context, box, child) {
                                 return infoStack(context, state, index);
-                                
                               },
                             ),
                           )

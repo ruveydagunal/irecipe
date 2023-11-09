@@ -7,7 +7,7 @@ import 'package:irecipe/app/views/view_home/view_model/home_event.dart';
 import 'package:irecipe/app/views/view_home/view_model/home_state.dart';
 
 class HomeViewModel extends Bloc<HomeEvent, HomeState> {
-  HomeViewModel() : super(HomeInitialState(recipes: [])) {
+  HomeViewModel() : super(HomeInitialState(recipe_en: [])) {
     on<HomeInitialEvent>(_initial);
   }
 
@@ -16,15 +16,15 @@ class HomeViewModel extends Bloc<HomeEvent, HomeState> {
   Future<FutureOr<void>> _initial(
       HomeInitialEvent event, Emitter<HomeState> emit) async {
     DatabaseReference databaseReference =
-        FirebaseDatabase.instance.ref('recipes');
+        FirebaseDatabase.instance.ref('recipe_en');
     await databaseReference.get().then((DataSnapshot snapshot) {
       if (snapshot.value != null) {
-        List<dynamic>? recipes = snapshot.value as List<dynamic>;
-        recipes.shuffle();
-        emit(HomeInitialState(recipes: recipes));
+        List<dynamic>? recipe_en = snapshot.value as List<dynamic>;
+        recipe_en.shuffle();
+        emit(HomeInitialState(recipe_en: recipe_en));
       }
     });
-    
-
   }
+
+
 }

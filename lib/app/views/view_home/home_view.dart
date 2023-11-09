@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
-import 'package:irecipe/app/router/app_router.dart';
 import 'package:irecipe/app/views/view_home/view_model/home_event.dart';
 import 'package:irecipe/app/views/view_home/view_model/home_state.dart';
 import 'package:irecipe/app/views/view_home/view_model/home_view_model.dart';
@@ -41,7 +40,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
             ),
             body: ListView.builder(
               shrinkWrap: true,
-              itemCount: state.recipes!.length,
+              itemCount: state.recipe_en!.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: context.horizontalPaddingConstNormal +
@@ -66,7 +65,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                       SizedBox(
                                         width: context.width * 0.8,
                                         child: Text(
-                                          state.recipes![index]['foodName'],
+                                          state.recipe_en![index]['foodName'],
                                           style: const TextStyle(fontSize: 35),
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -83,7 +82,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          state.recipes![index]['image'],
+                                          state.recipe_en![index]['image'],
                                         ),
                                         fit: BoxFit.cover,
                                       ),
@@ -92,27 +91,27 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                     ),
                                     height: 250,
                                   ),
-                                  const Text(
-                                    'Malzemeler',
+                                   Text(
+                                    L10n.of(context)!.materials,
                                     style: TextStyle(fontSize: 30),
                                   ),
                                   ListView.builder(
                                     physics: const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
-                                    itemCount: state.recipes![index]['materials'].length,
+                                    itemCount: state.recipe_en![index]['materials'].length,
                                     itemBuilder: (context, index2) {
                                       return Text(
-                                        state.recipes![index]['materials'][index2],
+                                        state.recipe_en![index]['materials'][index2],
                                         style: const TextStyle(fontSize: 16),
                                       );
                                     },
                                   ),
-                                  const Text(
-                                    'Hazırlanışı',
+                                   Text(
+                                    L10n.of(context)!.preparation,
                                     style: TextStyle(fontSize: 30),
                                   ),
                                   Text(
-                                    state.recipes![index]['recipe'],
+                                    state.recipe_en![index]['recipe'],
                                     style: const TextStyle(fontSize: 16),
                                   )
                                 ],
@@ -122,12 +121,12 @@ class HomeView extends StatelessWidget with HomeWidgets {
                         },
                       );
                     },
-                    child: state.recipes![index]['image'] != null
+                    child: state.recipe_en![index]['image'] != null
                         ? Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(state.recipes![index]['image']),
+                                image: NetworkImage(state.recipe_en![index]['image']),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius: const BorderRadius.all(Radius.circular(10)),
