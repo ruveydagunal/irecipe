@@ -44,12 +44,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'main', currentIndex: 1));
+                              category: 'main', currentIndex: 1));
                     }, Assets.images.jpg.main.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'desserts', currentIndex: 1));
+                              category: 'dessert', currentIndex: 1));
                     }, Assets.images.jpg.desserts.path)
                   ],
                 ),
@@ -59,12 +59,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'soaps', currentIndex: 1));
+                              category: 'soup', currentIndex: 1));
                     }, Assets.images.jpg.soaps.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'salad', currentIndex: 1));
+                              category: 'salad', currentIndex: 1));
                     }, Assets.images.jpg.salads.path)
                   ],
                 ),
@@ -74,12 +74,12 @@ class CategoriesView extends StatelessWidget with CategoriesWidget {
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'pastries', currentIndex: 1));
+                              category: 'pastry', currentIndex: 1));
                     }, Assets.images.jpg.cake.path),
                     categoriesContainer(context, () {
                       context.read<CategoriesViewModel>().add(
                           CategoriesInitialEvent(
-                              categoryName: 'appetizers', currentIndex: 1));
+                              category: 'appetizer', currentIndex: 1));
                     }, Assets.images.jpg.appetizers.path)
                   ],
                 )

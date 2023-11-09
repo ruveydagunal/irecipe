@@ -1,10 +1,10 @@
 abstract class CategoriesEvent {}
 
 class CategoriesInitialEvent extends CategoriesEvent {
-  String categoryName;
+  String category;
   final int currentIndex;
   CategoriesInitialEvent(
-      {required this.categoryName, required this.currentIndex});
+      {required this.category, required this.currentIndex});
 }
 
 class CurrentPageIndexEvent extends CategoriesEvent {

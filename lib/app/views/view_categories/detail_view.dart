@@ -39,7 +39,7 @@ class CategoryDetailView extends StatelessWidget {
             shrinkWrap: true,
             itemCount: state.recipe!.length,
             itemBuilder: (context, index) {
-              print("state : " + state.recipe![index]['image']);
+              // print("state : " + state.recipe![index]['image']);
               return Padding(
                 padding: context.horizontalPaddingConstNormal +
                     context.onlyTopPaddingMedium,
@@ -84,8 +84,8 @@ class CategoryDetailView extends StatelessWidget {
                                               BorderRadius.circular(10)),
                                       height: 250,
                                     ),
-                                    const Text(
-                                      'Malzemeler',
+                                     Text(
+                                      L10n.of(context)!.materials,
                                       style: (TextStyle(fontSize: 30)),
                                     ),
                                     ListView.builder(
@@ -105,8 +105,8 @@ class CategoryDetailView extends StatelessWidget {
                                                 fontSize: 16)));
                                       },
                                     ),
-                                    const Text(
-                                      'Hazırlanışı',
+                                     Text(
+                                      L10n.of(context)!.preparation,
                                       style: (TextStyle(fontSize: 30)),
                                     ),
                                     Text(
