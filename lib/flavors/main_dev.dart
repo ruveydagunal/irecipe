@@ -11,6 +11,7 @@ Future<void> main(List<String> args) async {
   await Hive.initFlutter();
   await Hive.openBox('favorites');
   await Hive.openBox('userLocalDB');
+  await Hive.openBox('languageSelected');
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   SystemChrome.setSystemUIOverlayStyle(
