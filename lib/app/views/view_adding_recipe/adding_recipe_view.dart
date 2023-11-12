@@ -49,8 +49,17 @@ class AddingRecipeView extends StatelessWidget {
           ),
           Padding(
             padding: context.paddingLow,
+            child: CustomTextInput(
+              controller: preparation,
+              icon: Icon(Icons.image),
+              label: 'Image Link'
+            ),
+          ),
+          Padding(
+            padding: context.paddingLow,
             child: CustomButton(buttonText: L10n.of(context)!.add, onPressed: (){}),
-          )
+          ),
+          
         ],
       ),
     );
