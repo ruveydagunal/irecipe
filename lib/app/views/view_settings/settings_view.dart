@@ -7,6 +7,7 @@ import 'package:irecipe/app/views/view_settings/widget/language_widget.dart';
 import 'package:irecipe/app/views/view_settings/widget/settings_widgets.dart';
 import 'package:irecipe/app/views/view_settings/widget/theme_switch.dart';
 import 'package:irecipe/core/constanst/color_constants.dart';
+import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/repository/service/auth_service.dart';
 
 import 'package:super_toast/super_toast.dart';
@@ -46,9 +47,37 @@ class SettingsView extends StatelessWidget with SettingsWidget {
           settingsContainer(
               onPressed: () {
                 showModalBottomSheet(
+                  isDismissible: false,
+                  useSafeArea: true,
+                  isScrollControlled: true,
                   context: context,
                   builder: (context) {
-                    return Container();
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  context.router.pop();
+                                },
+                                icon: Icon(Icons.clear),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: context.horizontalPaddingConstNormal,
+                              child: Text(
+                                L10n.of(context)!.aboutDescription,
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                 );
               },
@@ -58,9 +87,37 @@ class SettingsView extends StatelessWidget with SettingsWidget {
           settingsContainer(
               onPressed: () {
                 showModalBottomSheet(
+                  isDismissible: false,
+                  useSafeArea: true,
+                  isScrollControlled: true,
                   context: context,
                   builder: (context) {
-                    return Container();
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  context.router.pop();
+                                },
+                                icon: Icon(Icons.clear),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: context.horizontalPaddingConstNormal,
+                              child: Text(
+                                L10n.of(context)!.privacyDescription,
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                 );
               },
