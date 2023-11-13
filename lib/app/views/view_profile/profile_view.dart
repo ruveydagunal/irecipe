@@ -33,12 +33,19 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                     child: Container(
                         alignment: Alignment.topLeft,
                         child: Text(
-                          '${L10n.of(context)!.welcome}' ' ${state.name != null ? state.name : ''}',
+                          '${L10n.of(context)!.welcome}'
+                          ' ${state.name != null ? state.name : ''}',
                           style: TextStyle(
                               color: ColorConstants.primaryColor,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         )),
+                  ),
+                  profileButton(
+                    context: context,
+                    text: L10n.of(context)!.myRecipe,
+                    suffixIcon: Icons.restaurant_menu_outlined,
+                    onPressed: () => context.router.push(RecipeViewRoute()),
                   ),
                   profileButton(
                       context: context,
@@ -60,12 +67,10 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                                     ),
                                     profileInfoContainer(
                                         label: L10n.of(context)!.surname,
-                                        initialValue: state.surname
-                                        ),
+                                        initialValue: state.surname),
                                     profileInfoContainer(
                                         label: L10n.of(context)!.email,
-                                        initialValue: state.email
-                                        ),
+                                        initialValue: state.email),
                                   ],
                                 ),
                               ),
@@ -73,11 +78,6 @@ class ProfileView extends StatelessWidget with ProfileWidgets {
                           },
                         );
                       }),
-                  profileButton(
-                      context: context,
-                      text: L10n.of(context)!.myRecipe,
-                      suffixIcon: Icons.restaurant_menu_outlined,
-                      onPressed: () {}),
                   profileButton(
                       context: context,
                       text: L10n.of(context)!.settings,
