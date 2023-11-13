@@ -18,8 +18,8 @@ class _LanguageWidgetState extends State<LanguageWidget> {
     String currentValue = L10n.of(context)!.localeName;
     bool isDropdownOpen = false;
 
-    currentValue = languageBox.get('language') ?? currentValue;
-
+    currentValue = languageBox.get('language');
+    print(currentValue);
     return DropdownButtonHideUnderline(
       child: DropdownButton(
         onChanged: (value) {
