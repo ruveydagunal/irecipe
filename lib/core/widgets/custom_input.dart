@@ -6,7 +6,7 @@ import 'package:irecipe/core/extensions/context_extension.dart';
 class CustomTextInput extends StatelessWidget {
 
   final String label;
-  // final String hintText;
+  final String? hintText;
   final Icon icon;
   final TextEditingController controller;
   final TextInputType? keyboardType;
@@ -17,13 +17,13 @@ class CustomTextInput extends StatelessWidget {
   const CustomTextInput(
       {super.key,
       required this.label,
-      // required this.hintText,
       required this.icon,
       required this.controller,
       this.keyboardType,
       this.textInputAction,
       this.inputFormatters,
       this.validator,
+      this.hintText,
       });
 
   @override
@@ -48,7 +48,8 @@ class CustomTextInput extends StatelessWidget {
               disabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
               focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
               prefixIcon: icon,
-              label: Text(label)
+              label: Text(label),
+              hintText: hintText
               // hintText: hintText,
             ),
           ),

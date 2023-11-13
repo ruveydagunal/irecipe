@@ -65,6 +65,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ProfileView(),
       );
     },
+    RecipeViewRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: RecipeView(),
+      );
+    },
     SettingsViewRoute.name: (routeData) {
       final args = routeData.argsAs<SettingsViewRouteArgs>(
           orElse: () => const SettingsViewRouteArgs());
@@ -252,6 +258,20 @@ class ProfileViewRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ProfileViewRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [RecipeView]
+class RecipeViewRoute extends PageRouteInfo<void> {
+  const RecipeViewRoute({List<PageRouteInfo>? children})
+      : super(
+          RecipeViewRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'RecipeViewRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
