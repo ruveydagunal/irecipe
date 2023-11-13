@@ -134,6 +134,24 @@ class L10nEn extends L10n {
   String get foodName => 'Food Name';
 
   @override
+  String get foodNameMessage => 'Please Enter Food Name';
+
+  @override
+  String get materialsMessage => 'Please Enter Materials';
+
+  @override
+  String get preparationMessage => 'Please Enter Preparation';
+
+  @override
+  String get imageLinkMessage => 'Please Enter Image Link';
+
+  @override
+  String get imageLink => 'Image Link';
+
+  @override
+  String get exampleLink => 'https://example.com/image';
+
+  @override
   String get aboutDescription => 'Welcome to the iRecipe Family!\n\nDiscover the Chef Inside\niRecipe is designed to push the boundaries of taste and start your own culinary adventure.\nWe offer a wonderful platform with thousands of unique recipes, easy usability, and the opportunity to unleash your creativity.\nApplication Features:\nExtensive and Diverse Recipes: From main courses to desserts, soups to appetizers, iRecipe has a wide collection of recipes that cater to every palate.\nAdd to Favorites and Personalize: Create your personal collection by adding your favorite recipes. Add your own recipes and bring your own flavor to this enchanting world.\nCategorized Recipes: Quickly access recipes that suit your needs. Each category, from main courses to dessert recipes, is carefully organized.\nCommunity Recipes: Share your creativity in the kitchen! Add your own recipes and share your experiences with other iRecipe users.\niRecipe is here to make the cooking experience more personal, interesting, and delicious. We invite everyone to join their own culinary adventures and embark on this flavorful journey!\nEnjoy and start exploring!';
 
   @override

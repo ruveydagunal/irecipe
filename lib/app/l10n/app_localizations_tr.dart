@@ -134,6 +134,24 @@ class L10nTr extends L10n {
   String get foodName => 'Yemek İsmi';
 
   @override
+  String get foodNameMessage => 'Lütfen Yemek İsmi Giriniz';
+
+  @override
+  String get materialsMessage => 'Lütfen Malzemeleri Giriniz';
+
+  @override
+  String get preparationMessage => 'Lütfen Hazırlanışını Giriniz';
+
+  @override
+  String get imageLinkMessage => 'Lütfen Resim Linki Giriniz';
+
+  @override
+  String get imageLink => 'Resim Linki';
+
+  @override
+  String get exampleLink => 'https://örnek.com/görsel';
+
+  @override
   String get aboutDescription => 'Hoş Geldiniz iRecipe Ailesi! \n\nİçindeki Şefi Keşfet iRecipe, lezzetin sınırlarını zorlamak ve kendi mutfak serüveninizi başlatmak için tasarlandı. \nBinlerce eşsiz tarif, kolay kullanım ve yaratıcılığınızı ortaya çıkarmak için harika bir platform sunuyoruz. Uygulama Özellikleri: Geniş ve Çeşitli Tarifler: Ana yemekten tatlıya, çorbadan meze tariflerine kadar, iRecipe, her damak zevkine hitap eden geniş bir tarif koleksiyonuna sahiptir.Favorilere Ekle ve Kişiselleştir: Beğendiğiniz tarifleri favorilere ekleyerek, kişisel koleksiyonunuzu oluşturun. Kendi yemek tariflerinizi ekleyerek, bu büyüleyici dünyaya kendi lezzetinizi katın.Kategorize Edilmiş Tarifler: İhtiyacınıza uygun tariflere hızlıca ulaşın. Ana yemeklerden tatlı tariflerine kadar her kategori özenle düzenlenmiştir.Topluluk Tarifleri: Siz de mutfakta yaratıcılığınızı paylaşın! Kendi tariflerinizi ekleyin ve diğer iRecipe kullanıcılarıyla deneyimlerinizi paylaşın.iRecipe, yemek yapma deneyimini daha kişisel, ilginç ve lezzetli hale getirmek için burada. Herkesi kendi mutfak serüvenlerine katılmaya ve bu lezzet dolu yolculuğa çıkmaya davet ediyoruz!Afiyet olsun ve keşfetmeye başlayın!';
 
   @override

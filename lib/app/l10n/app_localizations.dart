@@ -351,6 +351,42 @@ abstract class L10n {
   /// **'Food Name'**
   String get foodName;
 
+  /// No description provided for @foodNameMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Food Name'**
+  String get foodNameMessage;
+
+  /// No description provided for @materialsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Materials'**
+  String get materialsMessage;
+
+  /// No description provided for @preparationMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Preparation'**
+  String get preparationMessage;
+
+  /// No description provided for @imageLinkMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter Image Link'**
+  String get imageLinkMessage;
+
+  /// No description provided for @imageLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Image Link'**
+  String get imageLink;
+
+  /// No description provided for @exampleLink.
+  ///
+  /// In en, this message translates to:
+  /// **'https://example.com/image'**
+  String get exampleLink;
+
   /// No description provided for @aboutDescription.
   ///
   /// In en, this message translates to:
