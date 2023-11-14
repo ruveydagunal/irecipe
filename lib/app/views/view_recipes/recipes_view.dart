@@ -1,77 +1,150 @@
+
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:irecipe/app/l10n/app_localizations.dart';
+import 'package:irecipe/app/views/view_recipes/view_model/recipes_event.dart';
+import 'package:irecipe/app/views/view_recipes/view_model/recipes_state.dart';
+import 'package:irecipe/app/views/view_recipes/view_model/recipes_view_model.dart';
+import 'package:irecipe/app/views/view_recipes/widgets/recipes_widgets.dart';
+import 'package:irecipe/core/constanst/color_constants.dart';
+import 'package:irecipe/core/extensions/context_extension.dart';
 
 @RoutePage()
-class RecipeView extends StatefulWidget {
-  @override
-  _RecipeViewState createState() => _RecipeViewState();
-}
-
-class _RecipeViewState extends State<RecipeView> {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+class RecipeView extends StatelessWidget with RecipesWidgets {
+  RecipeView({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Recipe List'),
-      ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: firestore.collection('recipes').snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            final recipes = snapshot.data!.docs;
-
-            return ListView.builder(
-              itemCount: recipes.length,
+    return BlocProvider(
+      create: (context) => RecipesViewModel()..add(RecipesInitalEvent()),
+      child: BlocConsumer<RecipesViewModel, RecipesState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(
+                L10n.of(context)!.iRecipe,
+              ),
+            actions: [
+              IconButton(onPressed: (){
+                context.read<RecipesViewModel>().add(RecipesInitalEvent());
+              }, icon: Icon(Icons.refresh))
+            ],
+            ),
+            body: state.recipes == null ? Center(child: CircularProgressIndicator()) :  ListView.builder(
+              shrinkWrap: true,
+              itemCount: state.recipes!.length,
               itemBuilder: (context, index) {
-                final recipe = recipes[index].data() as Map<String, dynamic>;
-
-                return Container(
-                  margin: EdgeInsets.all(8),
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        recipe['imageLink'],
-                        width: double.infinity,
-                        height: 200,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        recipe['recipeName'],
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Materials: ${recipe['materials'].join(', ')}',
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        'Preparation: ${recipe['preparation']}',
-                      ),
-                    ],
+                return Padding(
+                  padding: context.horizontalPaddingConstNormal +
+                      context.onlyTopPaddingMedium,
+                  child: GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                        isDismissible: false,
+                        useSafeArea: true,
+                        isScrollControlled: true,
+                        context: context,
+                        builder: (context) {
+                          return SingleChildScrollView(
+                            child: Padding(
+                              padding: context.paddingNormal,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                        width: context.width * 0.8,
+                                        child: Text(
+                                          state.recipes![index]['recipeName'],
+                                          style: const TextStyle(fontSize: 35),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          context.router.pop();
+                                        },
+                                        icon: Icon(Icons.clear),
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          state.recipes![index]['imageLink'],
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      color: ColorConstants.primaryColor,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    height: 250,
+                                  ),
+                                   Text(
+                                    L10n.of(context)!.materials,
+                                    style: TextStyle(fontSize: 30),
+                                  ),
+                                  ListView.builder(
+                                    physics: const NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: state.recipes![index]['materials'].length,
+                                    itemBuilder: (context, index2) {
+                                      return Text(
+                                        state.recipes![index]['materials'][index2],
+                                        style: const TextStyle(fontSize: 16),
+                                      );
+                                    },
+                                  ),
+                                   Text(
+                                    L10n.of(context)!.preparation,
+                                    style: TextStyle(fontSize: 30),
+                                  ),
+                                  Text(
+                                    state.recipes![index]['preparation'],
+                                    style: const TextStyle(fontSize: 16),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: state.recipes![index]['imageLink'] != null
+                        ? Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(state.recipes![index]['imageLink']),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: const BorderRadius.all(Radius.circular(10)),
+                            ),
+                            height: 250,
+                            child: ValueListenableBuilder(
+                              valueListenable: Hive.box('favorites').listenable(),
+                              
+                              builder: (context, box, child) {
+                                return infoStack(context, state, index);
+                                
+                              },
+                            ),
+                          )
+                        : Center(child: CircularProgressIndicator()),
                   ),
                 );
               },
-            );
-          }
-
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        },
+            ));
+          
+      },
       ),
     );
   }
