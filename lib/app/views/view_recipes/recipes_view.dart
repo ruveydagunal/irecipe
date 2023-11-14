@@ -35,14 +35,14 @@ class RecipeView extends StatelessWidget with RecipesWidgets {
               }, icon: Icon(Icons.refresh))
             ],
             ),
-            body: state.recipes == null ? Center(child: CircularProgressIndicator()) :  ListView.builder(
+            body: ListView.builder(
               shrinkWrap: true,
               itemCount: state.recipes!.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: context.horizontalPaddingConstNormal +
                       context.onlyTopPaddingMedium,
-                  child: GestureDetector(
+                  child: state.recipes![index]['imageLink'] == null ? Center(child: CircularProgressIndicator()) : GestureDetector(
                     onTap: () {
                       showModalBottomSheet(
                         isDismissible: false,
@@ -144,7 +144,7 @@ class RecipeView extends StatelessWidget with RecipesWidgets {
               },
             ));
           
-      },
+        },
       ),
     );
   }
