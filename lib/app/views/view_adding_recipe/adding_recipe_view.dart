@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/views/view_adding_recipe/view_model/adding_recipe_event.dart';
 import 'package:irecipe/app/views/view_adding_recipe/view_model/adding_recipe_state.dart';
-import 'package:irecipe/app/views/view_adding_recipe/view_model/adding_recipe_virew_model.dart';
+import 'package:irecipe/app/views/view_adding_recipe/view_model/adding_recipe_view_model.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 import 'package:irecipe/core/widgets/custom_button.dart';
 import 'package:irecipe/core/widgets/custom_input.dart';
