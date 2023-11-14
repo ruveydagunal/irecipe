@@ -15,7 +15,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
   var languageBox = Hive.box('languageSelected');
   @override
   Widget build(BuildContext context) {
-    String currentValue = L10n.of(context)!.localeName;
+    String? currentValue = L10n.of(context)!.localeName;
     bool isDropdownOpen = false;
 
     currentValue = languageBox.get('language');
@@ -24,7 +24,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
       child: DropdownButton(
         onChanged: (value) {
           setState(() {
-            currentValue == value;
+            currentValue = value;
             isDropdownOpen = !isDropdownOpen;
           });
           languageBox.put('language', currentValue);
