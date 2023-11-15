@@ -1,10 +1,9 @@
-
 import 'package:flavor/flavor.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/app/router/app_router.dart';
-import 'package:irecipe/app/theme/dark_theme.dart';
 import 'package:irecipe/app/theme/light_theme.dart';
 
 class App extends StatefulWidget {
@@ -27,7 +26,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  Locale _locale = const Locale('en', 'US');
+  Locale? _locale;
   ThemeData _themeData = AppThemeLight().themeData;
 
   changeTheme(ThemeData themeData) {
@@ -43,6 +42,13 @@ class _AppState extends State<App> {
     });
   }
 
+  getLangCode() {
+    var languageBox = Hive.box('languageSelected');
+    String currentLanguage = languageBox.get('language');
+    _locale = Locale(currentLanguage);
+    return _locale;
+  }
+
   changeLanguage(Locale locale) {
     setState(() {
       try {
@@ -55,6 +61,13 @@ class _AppState extends State<App> {
         rethrow;
       }
     });
+  }
+
+  @override
+  void initState() {
+    
+    super.initState();
+    getLangCode();
   }
 
   final _appRouter = AppRouter();

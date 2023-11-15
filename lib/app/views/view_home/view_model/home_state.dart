@@ -1,24 +1,24 @@
 abstract class HomeState {
-  List<dynamic>? recipe_en;
+  List<dynamic>? recipe;
   List<dynamic>? favorites;
-  HomeState({this.recipe_en, this.favorites});
+  HomeState({this.recipe, this.favorites});
 }
+
 
 class HomeInitialState extends HomeState {
   @override
-  List<dynamic>? recipe_en;
+  List<dynamic>? recipe;
   List<dynamic>? favorites = [];
-  HomeInitialState({this.recipe_en, this.favorites})
-      : super(recipe_en: recipe_en, favorites: favorites);
+  HomeInitialState({this.recipe, this.favorites})
+      : super(recipe: recipe, favorites: favorites);
 }
 
 class FavoriteState extends HomeState{
    @override
-  List<dynamic>? recipe_en;
+  List<dynamic>? recipe;
   List<dynamic>? favorites = [];
-  FavoriteState({this.recipe_en})
+  FavoriteState({this.recipe})
       : super(
-          recipe_en: recipe_en,
-          
+          recipe: recipe,
         );
 }

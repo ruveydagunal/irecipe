@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
             ),
             body: ListView.builder(
               shrinkWrap: true,
-              itemCount: state.recipe_en!.length,
+              itemCount: state.recipe!.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: context.horizontalPaddingConstNormal +
@@ -65,7 +65,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                       SizedBox(
                                         width: context.width * 0.8,
                                         child: Text(
-                                          state.recipe_en![index]['foodName'],
+                                          state.recipe![index]['foodName'],
                                           style: const TextStyle(fontSize: 35),
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -82,7 +82,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: NetworkImage(
-                                          state.recipe_en![index]['image'],
+                                          state.recipe![index]['image'],
                                         ),
                                         fit: BoxFit.cover,
                                       ),
@@ -98,10 +98,10 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                   ListView.builder(
                                     physics: const NeverScrollableScrollPhysics(),
                                     shrinkWrap: true,
-                                    itemCount: state.recipe_en![index]['materials'].length,
+                                    itemCount: state.recipe![index]['materials'].length,
                                     itemBuilder: (context, index2) {
                                       return Text(
-                                        state.recipe_en![index]['materials'][index2],
+                                        state.recipe![index]['materials'][index2],
                                         style: const TextStyle(fontSize: 16),
                                       );
                                     },
@@ -111,7 +111,7 @@ class HomeView extends StatelessWidget with HomeWidgets {
                                     style: TextStyle(fontSize: 30),
                                   ),
                                   Text(
-                                    state.recipe_en![index]['recipe'],
+                                    state.recipe![index]['recipe'],
                                     style: const TextStyle(fontSize: 16),
                                   )
                                 ],
@@ -121,12 +121,12 @@ class HomeView extends StatelessWidget with HomeWidgets {
                         },
                       );
                     },
-                    child: state.recipe_en![index]['image'] != null
+                    child: state.recipe![index]['image'] != null
                         ? Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(state.recipe_en![index]['image']),
+                                image: NetworkImage(state.recipe![index]['image']),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius: const BorderRadius.all(Radius.circular(10)),

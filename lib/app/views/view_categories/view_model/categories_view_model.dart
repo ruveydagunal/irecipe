@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:irecipe/app/views/view_categories/view_model/categories_event.dart';
 import 'package:irecipe/app/views/view_categories/view_model/categories_state.dart';
 
@@ -11,13 +12,21 @@ class CategoriesViewModel extends Bloc<CategoriesEvent, CategoriesState> {
     on<CategoriesInitialEvent>(_initial);
     on<CurrentPageIndexEvent>(_currentPageIndex);
   }
+String? _locale;
 
   final databaseReference = FirebaseDatabase.instance.ref();
+  getLangCode() {
+    var languageBox = Hive.box('languageSelected');
+    String currentLanguage = languageBox.get('language');
+    _locale = currentLanguage;
+    return _locale;
+  }
 
   Future<FutureOr<void>> _initial(
       CategoriesInitialEvent event, Emitter<CategoriesState> emit) async {
+        getLangCode();
     DatabaseReference mainReference =
-        FirebaseDatabase.instance.ref('recipe_en');
+        FirebaseDatabase.instance.ref('recipe_$_locale');
     await mainReference.get().then((DataSnapshot snapshot) {
       if (snapshot.value != null) {
         List<dynamic>? recipes = snapshot.value as List<dynamic>;
