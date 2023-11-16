@@ -1,11 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:irecipe/app/l10n/app_localizations.dart';
 import 'package:irecipe/core/extensions/context_extension.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
-  const CustomPasswordTextField({Key? key, this.controller, this.validator, this.inputFormatters}) : super(key: key);
+  const CustomPasswordTextField(
+      {Key? key, this.controller, this.validator, this.inputFormatters})
+      : super(key: key);
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
@@ -15,7 +16,6 @@ class CustomPasswordTextField extends StatefulWidget {
 
 class _PasswordTextFieldState extends State<CustomPasswordTextField> {
   final _obsureText = '*';
-  
 
   bool _isSecure = true;
 
@@ -38,17 +38,33 @@ class _PasswordTextFieldState extends State<CustomPasswordTextField> {
         obscuringCharacter: _obsureText,
         validator: widget.validator,
         inputFormatters: widget.inputFormatters,
+        cursorColor: Colors.black,
         decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                  focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                  errorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
-                  disabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground)),
-                  focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.all(context.lowRadius), borderSide: BorderSide(color: Theme.of(context).colorScheme.error)),
-                  prefixIcon: Icon(Icons.key_outlined),
-                  suffixIcon: _onVisiblityIcon(),
-                  labelText: L10n.of(context)!.password,
-                  // hintText: hintText,
-                ),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(context.lowRadius),
+              borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onBackground)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(context.lowRadius),
+              borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onBackground)),
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(context.lowRadius),
+              borderSide:
+                  BorderSide(color: Theme.of(context).colorScheme.error)),
+          disabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(context.lowRadius),
+              borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onBackground)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(context.lowRadius),
+              borderSide:
+                  BorderSide(color: Theme.of(context).colorScheme.error)),
+          prefixIcon: Icon(Icons.key_outlined),
+          suffixIcon: _onVisiblityIcon(),
+          labelText: L10n.of(context)!.password,
+          // hintText: hintText,
+        ),
       ),
     );
   }
@@ -57,12 +73,12 @@ class _PasswordTextFieldState extends State<CustomPasswordTextField> {
     return IconButton(
       onPressed: _changeLoading,
       icon: AnimatedCrossFade(
-        duration: const Duration(milliseconds: 500 ),
-          firstChild: const Icon(Icons.visibility_outlined),
-          secondChild: const Icon(Icons.visibility_off_outlined),
-          crossFadeState:
-              _isSecure ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-          ),
+        duration: const Duration(milliseconds: 500),
+        firstChild: const Icon(Icons.visibility_outlined),
+        secondChild: const Icon(Icons.visibility_off_outlined),
+        crossFadeState:
+            _isSecure ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+      ),
     );
   }
 }
